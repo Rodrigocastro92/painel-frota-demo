@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Laudo de ensaio · Demonstração</title>
+<style>
+  :root{--navy:#0B1F3A;--ink:#1C2B3A;--muted:#5B6676;--line:#D9DEE6;--ok:#1E7B4B}
+  *{box-sizing:border-box}
+  body{margin:0;background:#EEF1F5;color:var(--ink);font:15px/1.5 "Segoe UI",system-ui,sans-serif}
+  .sheet{max-width:760px;margin:28px auto;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  header{background:var(--navy);color:#fff;padding:18px 24px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+  header b{font-size:18px}
+  .tag{background:#E4141C;color:#fff;border-radius:6px;padding:3px 8px;font-size:12px;white-space:nowrap}
+  main{padding:22px 24px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:0 0 18px}
+  .grid div{border:1px solid var(--line);border-radius:8px;padding:10px 12px}
+  .grid small{display:block;color:var(--muted);font-size:12px}
+  table{width:100%;border-collapse:collapse;margin:8px 0 18px}
+  th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line)}
+  th{color:var(--muted);font-weight:600;font-size:13px}
+  .ok{color:var(--ok);font-weight:600}
+  .result{border-left:4px solid var(--ok);background:#F1F8F4;padding:12px 14px;border-radius:6px}
+  footer{padding:14px 24px;color:var(--muted);font-size:12px;border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <header><b>Laudo de ensaio</b><span class="tag">Documento fictício · demonstração</span></header>
+  <main>
+    <div class="grid">
+      <div><small>Placa</small><b id="p">—</b></div>
+      <div><small>Número de ordem</small><b id="o">—</b></div>
+      <div><small>Ensaio</small><b id="t">—</b></div>
+      <div><small>Data</small><b id="d">—</b></div>
+    </div>
+    <table>
+      <thead><tr><th>Item verificado</th><th>Resultado</th></tr></thead>
+      <tbody id="itens"></tbody>
+    </table>
+    <div class="result"><b class="ok">Aprovado.</b> Veículo dentro dos limites do ensaio na data indicada. Validade: 12 meses.</div>
+  </main>
+  <footer>Exemplo criado para a demonstração do Painel de Manutenção da Frota. Fornecedor, placa e valores são inventados.</footer>
+</div>
+<script>
+  const q = new URLSearchParams(location.search);
+  const set = (id, v) => { document.getElementById(id).textContent = v || "—"; };
+  const tipo = (q.get("t") || "").toUpperCase();
+  set("p", q.get("p")); set("o", q.get("o")); set("t", tipo ? "Ensaio " + tipo.toLowerCase() : ""); set("d", q.get("d"));
+  const ITENS = {
+    "ELÉTRICO": ["Isolamento da lança", "Corrente de fuga", "Aterramento do chassi"],
+    "ACÚSTICO": ["Emissão acústica da lança", "Fibra e conexões", "Cesto e suportes"],
+    "TACÓGRAFO": ["Aferição de velocidade", "Lacres", "Registro de jornada"]
+  };
+  document.getElementById("itens").innerHTML = (ITENS[tipo] || ["Inspeção geral"])
+    .map(i => `<tr><td>${i}</td><td class="ok">Conforme</td></tr>`).join("");
+</script>
+</body>
+</html>
