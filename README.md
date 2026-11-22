@@ -4,7 +4,7 @@ Sistema web para controlar a manutenção de uma frota de veículos leves e pesa
 
 Uso este sistema no meu dia a dia como controlador de frota. Esta é a versão de demonstração: **o código é o mesmo, mas todos os dados são fictícios**.
 
-**Demonstração:** link em breve (pode mexer à vontade; as alterações ficam só no seu navegador e o botão "Restaurar dados" volta ao início)
+**Demonstração:** [painel-frota-demo.vercel.app](https://painel-frota-demo.vercel.app) (pode mexer à vontade; as alterações ficam só no seu navegador e o botão "Restaurar dados" volta ao início)
 
 ![Resumo no computador](docs/computador-resumo.png)
 
@@ -75,4 +75,4 @@ Projeto de [Rodrigocastro92](https://github.com/Rodrigocastro92). Código escrit
 
 ## English summary
 
-**Fleet Maintenance Dashboard** is a web app that replaces a maintenance-control spreadsheet for a fleet of light and heavy vehicles. Each vehicle in the shop gets a process timeline (pickup, diagnosis, approval, repair, parts, ready, delivery), and the dashboards compute fleet availability, downtime cost (contract penalties with a grace period and backup-vehicle coverage), workshop delays and rankings adjusted by job complexity, Kaplan-Meier release forecasts and period-over-period history. Built with vanilla HTML/CSS/JS in a single file, SheetJS for Excel import/export, OpenStreetMap/OSRM for maps and routes. The production version runs on a Node.js serverless function on Vercel with Upstash Redis, signed-cookie login, scrypt-hashed passwords, role-based access and daily backups. This repository is a static demo with generated sample data.
+**Fleet Maintenance Dashboard** is a web app that replaces a maintenance-control spreadsheet for a fleet of light and heavy vehicles. Each vehicle in the shop gets a process timeline (pickup, diagnosis, approval, repair, parts, ready, delivery), and the dashboards compute fleet availability, downtime cost (contract penalties with a grace period and backup-vehicle coverage), workshop delays and rankings adjusted by job complexity, Kaplan-Meier release forecasts and period-over-period history. Built with vanilla HTML/CSS/JS in a single file, SheetJS for Excel import/export, OpenStreetMap/OSRM for maps and routes. The production version runs on a Node.js serverless function on Vercel with Upstash Redis, signed-cookie login, scrypt-hashed passwords, role-based access and daily backups. This repository is a static demo with generated sample data: https://painel-frota-demo.vercel.app
