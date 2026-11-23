@@ -4,7 +4,7 @@
    para a demonstração sempre parecer atual. Nada aqui vem da operação real. */
 (function(){
 "use strict";
-var VER="demo-3",KEEP={pm_theme:1};
+var VER="demo-4",KEEP={pm_theme:1};
 var LSO=null;try{LSO=window.localStorage}catch(e){}
 function wipe(){if(!LSO)return;Object.keys(LSO).forEach(function(k){if(k.indexOf("pmdb:")===0||(k.indexOf("pm_")===0&&!KEEP[k]))LSO.removeItem(k)})}
 window.PMDEMO_RESET=function(){try{wipe()}catch(e){}location.reload()};
@@ -47,7 +47,14 @@ var AREAS=[
  {a:"BAIXADA",r:"RJ",c:"DÉBORA",b:["BASE RIO NOVO","BASE VILA NOVA"],w:18},
  {a:"VALE",r:"VALE",c:"EDUARDO",b:["BASE SERRA","BASE VALE VERDE"],w:16}];
 var FL=[],VAL={};
-function mkv(tp,ar,res){var con=!res&&tp.con&&rnd()<0.31,v={p:placa(),o:ordem(con),c:res?"FERNANDA":ar.c,a:res?(ar.r=="VALE"?"RESERVA VALE":"RESERVA RJ"):ar.a,b:res?(ar.r=="VALE"?"RESERVA VALE":"RESERVA RJ"):pick(ar.b),s:res?"RESERVA":"EFETIVO",k:tp.k,t:tp.t,m:pick(tp.m),g:con?"ALFA CONECTA":"ALFA",r:ar.r,v:res?0:round2(ri(tp.v[0]*100,tp.v[1]*100)/100)};if(!res)VAL[v.p]=v.v;return v}
+/* descrição, ano, chassi e implemento: gerador separado, para não mudar o resto dos dados */
+var s1=7340021;function r1(){s1|=0;s1=s1+0x6D2B79F5|0;var t=Math.imul(s1^s1>>>15,1|s1);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}
+function p1(a){return a[Math.floor(r1()*a.length)]}
+var DESC={"PICAPE LEVE":["SUPORTE DE ESCADA | GIROFLEX | SONORIZADOR DE RÉ","CAPOTA MARÍTIMA | GIROFLEX","SUPORTE DE ESCADA | CAIXA DE FERRAMENTAS"],"SUPERVISÃO":["COMPLETO | RASTREADOR","COMPLETO | GIROFLEX"],"PICAPE MÉDIA":["4X4 | SUPORTE DE ESCADA | GIROFLEX","4X4 | CAPOTA | GUINCHO"],"FURGÃO":["BAÚ DE FERRAMENTAS | GIROFLEX","PRATELEIRAS | INVERSOR"],"MOTOCICLETA":["BAÚ TRASEIRO","BAÚ TRASEIRO | PROTETOR DE MOTOR"],"CESTO SIMPLES":["CESTO AÉREO SIMPLES 10M | ISOLAMENTO SIMPLES | CARROCERIA MODULAR","CESTO AÉREO SIMPLES 12M | ISOLADO"],"CESTO DUPLO":["CESTO AÉREO DUPLO 13M | ISOLAMENTO DUPLO","CESTO AÉREO DUPLO 15M | ISOLADO | GUINDAUTO"],"CATAGALHO":["CAÇAMBA BASCULANTE | TRITURADOR"],"ESPECIAL":["GUINDAUTO 20T | CARROCERIA"]};
+var IMPL={"CESTO SIMPLES":["CESTO 10M","CESTO 12M"],"CESTO DUPLO":["CESTO DUPLO 13M","CESTO DUPLO 15M"],"CATAGALHO":["CAÇAMBA BASCULANTE"],"ESPECIAL":["GUINDAUTO"],"PICAPE LEVE":["CAPOTA"],"FURGÃO":["BAÚ DE FERRAMENTAS"]};
+function chassi(){var c="ABCDEFGHJKLMNPRSTUVWXYZ0123456789",x="9XX";for(var i=0;i<14;i++)x+=c[Math.floor(r1()*c.length)];return x}
+function mkx(v,tp){var y=2023+Math.floor(r1()*3);v.md=v.m+" ("+p1(DESC[tp.t]||["COMPLETO"])+")";v.an=y+"/"+(y+(r1()<0.7?1:0));if(r1()<0.85)v.ch=chassi();if(IMPL[tp.t]&&r1()<(tp.k=="PESADOS"?0.9:0.35))v.im=p1(IMPL[tp.t]);return v}
+function mkv(tp,ar,res){var con=!res&&tp.con&&rnd()<0.31,v={p:placa(),o:ordem(con),c:res?"FERNANDA":ar.c,a:res?(ar.r=="VALE"?"RESERVA VALE":"RESERVA RJ"):ar.a,b:res?(ar.r=="VALE"?"RESERVA VALE":"RESERVA RJ"):pick(ar.b),s:res?"RESERVA":"EFETIVO",k:tp.k,t:tp.t,m:pick(tp.m),g:con?"ALFA CONECTA":"ALFA",r:ar.r,v:res?0:round2(ri(tp.v[0]*100,tp.v[1]*100)/100)};if(!res)VAL[v.p]=v.v;return mkx(v,tp)}
 var TW=TIPOS.map(function(t){return[t,t.w]}),AW=AREAS.map(function(a){return[a,a.w]});
 for(var i=0;i<446;i++)FL.push(mkv(wpick(TW),wpick(AW),false));
 for(i=0;i<30;i++)FL.push(mkv(wpick(TW.filter(function(x){return x[0].k=="LEVES"||rnd()<0.5})),wpick(AW),true));
