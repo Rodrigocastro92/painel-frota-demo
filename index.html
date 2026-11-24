@@ -434,7 +434,23 @@ body.cli .ctlv{display:none!important}
 .sgk{font-style:normal;font-weight:800;width:26px;height:26px;border-radius:50%;background:#1F3A5F;color:#fff;display:grid;place-items:center;font-size:12px;flex:none}.sgr.on .sgk{background:#E4141C}
 .sgri{flex:1;min-width:0}.sgri>b{display:block;font-size:14.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--tx)}.sgri small{display:block;color:var(--mu);font-size:12px;margin-top:4px}
 .sgc{display:flex;flex-wrap:wrap;gap:4px 5px;margin-top:6px}.sgc>span{font-size:11.5px;background:rgba(127,127,127,.1);border-radius:999px;padding:2px 8px;color:var(--tx);white-space:nowrap}
-.sgc>span.sgl-c{background:rgba(228,20,28,.13);color:#E4141C;font-weight:700}.sgc>span.sgl-m{background:rgba(31,58,95,.14);font-weight:700}.sgc>span.sgl-t{background:rgba(47,158,68,.15);color:#2f9e44;font-weight:700}.sgc>span.sgtg{background:rgba(228,20,28,.1);color:#E4141C}.sgc>span.sgnr{color:var(--mu)}
+.sgc>span.sgl-c{background:rgba(228,20,28,.13);color:#E4141C;font-weight:700}.sgc>span.sgl-m{background:rgba(31,58,95,.14);font-weight:700}.sgc>span.sgl-t{background:rgba(47,158,68,.15);color:#2f9e44;font-weight:700}.sgc>span.sgtg{background:rgba(228,20,28,.1);color:#E4141C}
+.sgtg.ok{background:rgba(43,108,196,.12);color:var(--sOk)}
+.sgok{color:var(--sOk);font-weight:600}
+.sgpaste{margin:0 0 10px}.sgpaste label{display:flex;flex-direction:column;gap:4px;font-size:12.5px;font-weight:600;color:var(--mu)}.sgpaste textarea{width:100%;min-height:44px;resize:vertical;font:inherit;font-size:13px;font-weight:400;padding:8px 10px;border:1px dashed #9FB2C8;border-radius:10px;background:var(--card);color:var(--tx,inherit)}.sgpaste #sgcr{margin:6px 0 0}.sgpaste #sgcr:empty{display:none}
+.sgbars{display:flex;align-items:flex-end;gap:6px;height:290px;overflow-x:auto;overflow-y:hidden;padding:4px 2px 0;scrollbar-width:thin}
+.sgbc{flex:0 0 34px;height:100%;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;position:relative;padding-bottom:150px;box-sizing:border-box}
+.sgbc i{display:block;width:26px;border-radius:5px 5px 0 0;background:linear-gradient(180deg,#2B6CC4,#1F3A5F);min-height:4px}
+.sgbc em{font-style:normal;font-size:11.5px;font-weight:800;color:#fff;background:#1F3A5F;border-radius:5px;padding:1px 5px;margin-bottom:3px}
+.sgbc span{position:absolute;bottom:0;left:50%;height:146px;font-size:10.5px;font-weight:600;line-height:1.15;color:var(--mu);writing-mode:vertical-rl;transform:translateX(-50%) rotate(180deg);text-align:left;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-transform:uppercase}
+.sgbc.sgb-c i{background:linear-gradient(180deg,#F05A60,#B3121A)}.sgbc.sgb-c em{background:#B3121A}.sgbc.sgb-m i{background:linear-gradient(180deg,#F2C200,#C99A00)}.sgbc.sgb-m em{background:#A07800}
+.sgbc.na i{opacity:.55}.sgbc.ck{cursor:pointer}.sgbc.ck:hover i{filter:brightness(1.15)}.sgbl{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;margin:6px 0 0}
+.sgoc{margin:0 0 12px}.sgoc:empty{display:none}.sgoh{display:flex;flex-wrap:wrap;gap:4px 10px;align-items:baseline;margin:0 0 6px;font-size:13px}.sgoh span{font-size:11.5px;color:var(--mu)}
+.sgol{display:flex;flex-wrap:wrap;gap:6px}.sgol button{display:inline-flex;align-items:center;gap:6px;border:1px solid #D5DEE8;background:var(--card);border-radius:999px;padding:4px 10px 4px 4px;font-size:12px;cursor:pointer;color:inherit}
+.sgol button b{min-width:24px;height:24px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;background:var(--sNe);color:#fff;font-size:12px;padding:0 6px}
+.sgol button i{font-style:normal;font-size:10.5px;font-weight:700;opacity:.85}.sgol .sgo-c b{background:#E4141C}.sgol .sgo-c i{color:#E4141C}.sgol .sgo-m b{background:#C99A00}.sgol .sgo-m i{color:#A07800}.sgol .sgo-t b{background:var(--sOk)}.sgol .sgo-t i{color:var(--sOk)}
+.sgol button.off{opacity:.55;cursor:default}.dk .sgol button{border-color:rgba(255,255,255,.16)}
+.sgsv{display:block;font-size:11.5px;color:var(--mu);margin-top:2px;line-height:1.35}.sgc>span.sgnr{color:var(--mu)}
 .sggo{flex:none;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;text-decoration:none;font-weight:800;color:#1F3A5F;background:rgba(127,127,127,.1)}.sggo:hover{background:#1F3A5F;color:#fff}
 .gonly{display:none}body.gest .gonly{display:block}body.gest #upcard,body.gest #xcard,body.gest #esup{display:none!important}
 .xvw{position:fixed;inset:0;z-index:9999;background:rgba(7,24,46,.45);display:none;align-items:center;justify-content:center;padding:16px}
@@ -1208,7 +1224,7 @@ const isoDiff=(a,b)=>Math.round((new Date(b+"T12:00:00Z")-new Date(a+"T12:00:00Z
 function epk(r){const p=String(r.PLACA||"").trim().toUpperCase();if(!p)return"";const s=String(r.SMV??"").trim();const b=bd(r)||di(r["DT ENTRADA OFICINA"]);return s?p+"|"+s:(b?p+"|"+b:"")}
 function eprec(r){const g=String(r["GRUPO DE SERVIÇO2"]||"").toUpperCase().replace(/\. ?/g,"-").split("-").map(z=>z.trim()).filter(Boolean).map(z=>FIXG[z]||z);
 return{p:String(r.PLACA).trim().toUpperCase(),b:bd(r)||di(r["DT ENTRADA OFICINA"])||"",en:di(r["DT ENTRADA OFICINA"])||"",orc:di(r["DT ORÇAMENTO"])||"",ap:di(r["DT APROVAÇÃO"])||"",pr:di(r["DT PRONTO"])||"",pv:di(r["PREVISÃO DEVOLUÇÃO"])||"",dc:di(r["DATA CONCLUSÃO"])||"",
-o:String(r.DESTINO||"").trim().toUpperCase(),c:r._c||"SEM CONTRATO",m:String(r.MODELO||"").trim(),g:[...new Set(g)].sort().join("|"),or:String(r.ORDEM??"").trim(),x:(r["CANCELAR?"]===true||r["STATUS 1"]=="SOL. CANCELAMENTO")?1:"",z:""}}
+o:String(r.DESTINO||"").trim().toUpperCase(),c:r._c||"SEM CONTRATO",m:String(r.MODELO||"").trim(),g:[...new Set(g)].sort().join("|"),or:String(r.ORDEM??"").trim(),sv:String(r.SMV??"").trim(),x:(r["CANCELAR?"]===true||r["STATUS 1"]=="SOL. CANCELAMENTO")?1:"",z:""}}
 async function HLOAD(){if(!DB||!CAN)return;try{const ix=await DB.doc("privado/epidx").get();const ms=ix.exists?Object.keys(ix.data().m||{}):[];
 for(const m of ms){try{const z=await DB.doc("privado/ep_"+m).get();if(z.exists)(z.data().l||[]).forEach(a=>{const o=epO(a);o._k=a[15]||(o.p+"|"+o.b);o.rv=a[16]||"";o.rf=a[17]||"";o.lv=a[18]||"";o.pv0=a[19]||"";o.pc=a[20]||"";EP[o._k]=o})}catch(e){}}
 const f=await DB.doc("privado/hfr").get();if(f.exists)FRH=f.data().d||{}}catch(e){}
@@ -1427,7 +1443,7 @@ const comPv=sai.filter(o=>o.pv&&!ISREB(o.o)),ok=comPv.filter(o=>o.dc<=o.pv);
 const lastDc={};EA.filter(o=>o.dc).forEach(o=>{(lastDc[o.p]=lastDc[o.p]||[]).push(o.dc)});
 const rein=ent.filter(o=>(lastDc[o.p]||[]).some(d=>d<o.b&&isoDiff(d,o.b)<=30));
 const cov=o=>{let rv=o.rv||"",rf=o.rf||"";if(!endOf(o)){const rs=RES[npl(o.p)];if(rs){rv=rs.i||o.b;rf=""}else if(rv&&!rf)rf=T}return rv?[rv,rf]:null};
-const GO={},GP={},gs=days.map(d=>{let b=0,dc=0;ov.forEach(o=>{if(!(o.b<=d&&(!endOf(o)||d<endOf(o))))return;if(isoDiff(o.b,d)+1<=carP(o.p,o.b))return;const v=val(o.p)/30;if(!v)return;const cv=cov(o),c=cv&&d>=cv[0]&&(!cv[1]||d<cv[1]);b+=v;if(c)dc+=v;else{const k=o.o||"—";GO[k]=(GO[k]||0)+v;const q=GP[o.p]=GP[o.p]||{p:o.p,o:o.o,m:o.m,c:o.c,d:0,v:0,dc:0};q.d++;q.v+=v}if(c){const q=GP[o.p]=GP[o.p]||{p:o.p,o:o.o,m:o.m,c:o.c,d:0,v:0,dc:0};q.dc+=v}});return{d,b,dc,l:b-dc}});
+const GO={},GP={},gs=days.map(d=>{let b=0,dc=0;ov.forEach(o=>{if(!(o.b<=d&&(!endOf(o)||d<endOf(o))))return;if(isoDiff(o.b,d)+1<=carP(o.p,o.b,o.sv))return;const v=val(o.p)/30;if(!v)return;const cv=cov(o),c=cv&&d>=cv[0]&&(!cv[1]||d<cv[1]);b+=v;if(c)dc+=v;else{const k=o.o||"—";GO[k]=(GO[k]||0)+v;const q=GP[o.p]=GP[o.p]||{p:o.p,o:o.o,m:o.m,c:o.c,d:0,v:0,dc:0};q.d++;q.v+=v}if(c){const q=GP[o.p]=GP[o.p]||{p:o.p,o:o.o,m:o.m,c:o.c,d:0,v:0,dc:0};q.dc+=v}});return{d,b,dc,l:b-dc}});
 const glb=gs.reduce((s,x)=>s+x.b,0),gld=gs.reduce((s,x)=>s+x.dc,0),gl=glb-gld;
 const avg=a=>a.length?a.reduce((s,x)=>s+x,0)/a.length:null;
 const ofi={};sai.forEach(o=>{if(ISREB(o.o))return;const k=o.o||"—",q=ofi[k]=ofi[k]||{n:0,t:[],pv:0,ok:0,in:0};q.n++;const x=isoDiff(o.b,o.dc);if(x>=0)q.t.push(x+1);if(o.pv){q.pv++;if(o.dc<=o.pv)q.ok++}});ent.forEach(o=>{if(ISREB(o.o))return;const k=o.o||"—",q=ofi[k]=ofi[k]||{n:0,t:[],pv:0,ok:0,in:0};q.in++});
@@ -1542,8 +1558,9 @@ let CAR=6;try{const z=localStorage.getItem("pm_car");if(z!==null&&+z>=0&&+z<90)C
 let RES={};const npl=s=>String(s||"").toUpperCase().replace(/[^A-Z0-9]/g,"");
 const gl=n=>Math.max(0,n-CAR);
 /* notas de RETRABALHO (CENTRO DE TRABALHO da planilha de translados): glosam desde o 1º dia, sem carência */
-let RTX=null;function rtIdx(){const k=typeof ESX!="undefined"&&ESX?ESX.u+"|"+ESX.L.length:"";if(RTX&&RTX.k===k)return RTX;const S=new Set(),P={};if(k)ESX.L.forEach(r=>{if(!r.rt)return;if(r.s)S.add(String(r.s));(P[r.p]=P[r.p]||[]).push(r.b)});return RTX={k,S,P}}
-function isRT(p,b,sm){const I=rtIdx();if(sm&&I.S.has(String(sm).trim()))return true;const l=I.P[npl(p)];return!!(l&&b&&l.some(x=>Math.abs(isoDiff(x,b))<=3))}
+/* retrabalho: vale a SMV. Placa + data (até 3 dias) só quando falta a SMV de um dos lados, para não pegar o retrabalho de outra nota da mesma placa */
+let RTX=null;function rtIdx(){const k=typeof ESX!="undefined"&&ESX?ESX.u+"|"+ESX.L.length:"";if(RTX&&RTX.k===k)return RTX;const S=new Set(),P0={},PA={};if(k)ESX.L.forEach(r=>{if(!r.rt)return;const sv=r.s&&/\d{5,}/.test(String(r.s));if(sv)S.add(String(r.s));else(P0[r.p]=P0[r.p]||[]).push(r.b);(PA[r.p]=PA[r.p]||[]).push(r.b)});return RTX={k,S,P0,PA}}
+function isRT(p,b,sm){const I=rtIdx(),s=String(sm??"").trim().replace(/\.0+$/,"");if(s&&/\d{5,}/.test(s)&&I.S.has(s))return true;const l=(s&&/\d{5,}/.test(s)?I.P0:I.PA)[npl(p)];return!!(l&&b&&l.some(x=>Math.abs(isoDiff(x,b))<=3))}
 const carP=(p,b,sm)=>isRT(p,b,sm)?0:CAR;
 const addD=(n)=>new Date(hoje.getTime()+n*864e5).toLocaleDateString("pt-BR");
 let RESI=null;
@@ -1581,7 +1598,7 @@ function ESBUILD(TR,EN){const ht=esHdr(TR,["DATA SMV"]),he=esHdr(EN,["DATA DE DE
   let e=esReal(s)?byS.get(s):null;if(!e&&okp&&b)e=M.get(key(s,p,b))||M.get("P"+p+"|"+b)||null;
   if(!e&&okp){let bd=4;(byP.get(p)||[]).forEach(x=>{const z=Math.abs(isoDiff(x.b,b||d));if(z<bd&&x.b<=d){bd=z;e=x}})}
   if(!e){if(!b||b<lim||!okp||isC(gv(r,u.w))||canc.has(esReal(s)?s:p+"|"+b))continue;e=neu(s,p,b)}
-  nE++;if(/RETRAB/.test(esH(gv(r,u.w))))e.rt=1;if(!e.d||d>e.d)e.d=d;const rg=esH(gv(r,u.c));if(rg&&rg!="-"&&!/^#/.test(rg)){e.rg=rg;if(!e.c)e.c=rg}
+  nE++;if(/RETRAB/.test(esH(gv(r,u.w)))&&(!esReal(s)||!e.s||e.s===s))e.rt=1;if(!e.d||d>e.d)e.d=d;const rg=esH(gv(r,u.c));if(rg&&rg!="-"&&!/^#/.test(rg)){e.rg=rg;if(!e.c)e.c=rg}
   if(!e.o){const o=esH(gv(r,u.o));if(o&&o!="-"){e.o=o;e.g=esH(gv(r,u.g))}}if(!e.ct){const ct=esH(gv(r,u.ct));e.ct=/CONECTA/.test(ct)?2:/ALFA/.test(ct)?1:0}}
  const L=[...M.values()].filter(e=>e.b>=lim);if(L.length<20)throw new Error("Achei só "+L.length+" SMV(s) com data na aba TRANSLADO. Confira se é a planilha CONTROLE ENTRADAS SAÍDAS.");
  let d0=L[0].b;L.forEach(e=>{if(e.b<d0)d0=e.b});const C=[],O=[],G=[],ix=(A,v)=>{v=v||"";let j=A.indexOf(v);if(j<0){j=A.length;A.push(v)}return j},dn=x=>x?isoDiff(d0,x):null;
@@ -1715,15 +1732,44 @@ function GEOBUILD(sheets){const P=[],num=v=>{const x=parseFloat(String(v??"").re
    P.push({id,n:nm,a:String(cA<0?"":r[cA]??"").trim(),la:+la.toFixed(6),lo:+lo.toFixed(6),k,c:/CONECTA/.test(u)?"ALFA CONECTA":/ALFA/.test(u)?"ALFA":"",s:cS>=0?String(r[cS]??"").trim():"",v:cV>=0?String(r[cV]??"").trim():""})}});
  if(!P.some(p=>p.k!="ba"))throw new Error("Não achei oficinas com latitude e longitude na planilha (aba de prestadores).");if(!P.some(p=>p.k=="ba"||p.k=="lo"))throw new Error("Não achei bases com latitude e longitude na planilha.");
  const seen=new Set();return{v:1,P:P.filter(p=>{const k=p.id+"|"+p.k;if(seen.has(k))return false;seen.add(k);return true})}}
+/* ===== o que cada oficina faz e que veículos aceita (colunas SERVIÇOS REALIZADOS e TIPOS DE VEÍCULOS da planilha de endereços) =====
+   Texto livre vira códigos: serviços (MEC, ELE, FUN, HID, SUS, AR, VID, ADE, ADP, GAR) e tipos de veículo (SUP, PL, PM, FUR, MOTO, PES).
+   DESCREDENCIADA sai da sugestão; quem só vende peças ou pneus, só faz garantia ou só faz ensaio não entra como oficina comum. */
+var GSVN={MEC:"Mecânica",ELE:"Elétrica",FUN:"Funilaria e pintura",HID:"Hidráulica",SUS:"Suspensão",AR:"Ar-condicionado",VID:"Vidros",ADE:"Adesivos",ADP:"Adaptações e implementos",GAR:"Garantia e recall"},
+ GVCN={SUP:"Supervisão",PL:"Picape leve",PM:"Picape média",FUR:"Furgão",MOTO:"Moto",PES:"Pesados"},GLIGHT=["SUP","PL","PM","FUR"],
+ GSM=[[/MECAN|MOTOR|INJEC|CAMBIO|EMBREA|FREIO|ARREFEC|DIESEL/,"MEC"],[/ELETR|BATERI|TACOG/,"ELE"],[/FUNIL|PINTUR|LANTER/,"FUN"],[/HIDRA|IMPLEMENT|CESTO|LANCA/,"HID"],[/SUSP|SUPENS|MOLAS?\b|AMORTEC/,"SUS"],[/AR.?CONDIC|CLIMATIZ/,"AR"],[/VIDR|PARABRIS/,"VID"],[/ADESIV|PLOTAG|IMPRESS/,"ADE"],[/ADAPTAC|ADPTAC|CARROCER|MONTAGEM/,"ADP"],[/GARANT|RECALL|REACALL/,"GAR"]],
+ GBR=[[/FIORINO|MOBI|PALIO|SIENA|CRONOS|STRADA|DUCATO|\bUNO\b|ARGO|TORO|WEEKEND|\bWKD\b/,"FIAT"],[/SPRINTER|ATEGO|ACCELO|ACTROS|AXOR|\b1016\b|\b1719\b|MERCEDES/,"MERCEDES"],[/\bGOL\b|SAVEIRO|VOYAGE|DELIVERY|CONSTELLATION|ROBUST|\bCRM\b|AMAROK|WORKER|\bPOLO\b|VIRTUS/,"VW"],[/F4000|RANGER|TROLLER/,"FORD"],[/HILUX/,"TOYOTA"],[/\bS10\b|ONIX|SPIN|MONTANA/,"GM"],[/DAILY/,"IVECO"],[/NXR|XRE|\bCG\b|BROS/,"HONDA"]],
+ gsvc=s=>{const z=nrm(s||"");return[...new Set(GSM.filter(([re])=>re.test(z)).map(x=>x[1]))]},gBrN=b=>({FIAT:"Fiat",MERCEDES:"Mercedes",VW:"Volkswagen"})[b]||cap(b);
+function gcap(s0,v0,nm){const S=nrm(s0||"").replace(/\s+/g," ").trim(),V0=nrm(v0||"").replace(/\s+/g," ").trim(),N=nrm(nm||""),o={st:"ok",sv:new Set(),all:false,only:/^SO\b|ESPECIALIST/.test(S),gar:false,veh:null,br:"",brx:false,has:!!(S||V0)};
+ if(/DESCREDENC/.test(S+" "+V0)){o.st="desc";return o}
+ if(!S||/SEM INFORMAC/.test(S))o.st="nd";
+ if(/TODOS OS SERVIC/.test(S)||/SERVICOS DE MOTOS/.test(S))o.all=true;
+ gsvc(S).forEach(c=>o.sv.add(c));if(o.sv.has("ADP")&&!/HIDRA/.test(S))o.sv.delete("HID");if(/ESPECIALIZADA|MECANICA GERAL|SERVICOS DE MECANICA/.test(S))o.sv.add("MEC");
+ if(/VENDA DE|^PECAS/.test(S)&&!o.all&&![...o.sv].some(c=>c!="GAR"&&c!="ADP"))o.st="pecas";
+ if(/ENSAIO/.test(S)&&!o.all&&!o.sv.size)o.st="ens";
+ if(o.sv.has("GAR")&&!o.all&&(o.sv.size==1||/^SO\b|CONSECIONAR|CONCESSIONAR/.test(S)))o.gar=true;
+ const bz=S+" "+V0;o.br=/FIAT/.test(bz)?"FIAT":/MERCEDE/.test(bz)?"MERCEDES":/\bVW\b|VOLKS/.test(bz)?"VW":"";o.brx=!!o.br&&(o.gar||/VEICULOS FIAT|SO .*FIAT|SO .*MERCEDE/.test(bz));
+ const V=V0&&!/SEM INFORMAC|^VENDA DE/.test(V0)?V0:(/LEVE|PICAPE|FURG|PESAD|MOTO|SUPERVIS/.test(S)?S:"");
+ if(V&&!/TODOS/.test(V)){const c=new Set();if(/MOTO/.test(V))c.add("MOTO");if(/PESAD/.test(V))c.add("PES");if(/SUPERVIS|SUPEIRVIS/.test(V))c.add("SUP");if(/FURG/.test(V))c.add("FUR");
+  const pm=V.match(/P[IE]CAPES?([^-]*)/);if(pm){const g=pm[1];const l=/LEVE/.test(g),m=/MEDIA|DIESE/.test(g);if(l)c.add("PL");if(m)c.add("PM");if(!l&&!m){c.add("PL");c.add("PM")}}
+  if(/\bLEVES?\b/.test(V.replace(/P[IE]CAPES?[^-]*/,""))){if(c.has("PL")||c.has("PM"))c.add("SUP");else GLIGHT.forEach(x=>c.add(x))}
+  if(c.size)o.veh=c}
+ const nc=/PESAD/.test(N)&&!/LEVE/.test(N)?"PES":/LEVE/.test(N)&&!/PESAD/.test(N)?"LEV":"";
+ if(nc=="PES")o.veh=new Set(o.veh?[...o.veh].filter(x=>x=="PES"||x=="FUR"):["PES","FUR"]);if(nc=="LEV")o.veh=new Set(o.veh?[...o.veh].filter(x=>x!="PES"):[...GLIGHT,"MOTO"]);
+ return o}
+const gSvTxt=g=>!g||!g.has?"":g.all?"Todos os serviços":g.st=="nd"?"Serviços não informados":g.st=="pecas"?"Só venda de peças":g.st=="ens"?"Só ensaio":[...g.sv].map(c=>GSVN[c]).join(", ")||"—",
+ gVhTxt=g=>!g||!g.has?"":(g.veh?[...g.veh].sort((a,b)=>Object.keys(GVCN).indexOf(a)-Object.keys(GVCN).indexOf(b)).map(c=>GVCN[c]).join(", "):"Todos os veículos")+(g.brx?" · só "+gBrN(g.br):"");
 function GEOIX(){if(!GEO)return;GEO.P.forEach(p=>{p._t=gtk(p.n);p._c=gtk(String(p.n).split(" - ")[0]);p._ta=gtk(p.a);const z=nrm(p.n+" "+p.v);p._cat=/PESAD/.test(z)&&!/LEVE/.test(z)?"PESADOS":/LEVE/.test(z)&&!/PESAD/.test(z)?"LEVES":"";
-  const zn=nrm(p.n),sp=GSPC.find(([re])=>re.test(zn));p._sp=sp?sp[1]:"";p._s=String(p.s||"").split(/[,;/|]+/).map(x=>x.trim()).filter(Boolean).map(x=>cap(x))});geoStats.k=null;SG.lk=""}
+  p._g=p.k=="of"||p.k=="en"?gcap(p.s,p.v,p.n):null;if(p._g&&p._g.veh){const v=p._g.veh;p._cat=v.has("PES")&&!GLIGHT.some(x=>v.has(x))?"PESADOS":!v.has("PES")?"LEVES":p._cat}
+  const zn=nrm(p.n),sp=GSPC.find(([re])=>re.test(zn));p._sp=sp&&!(p._g&&p._g.has&&p._g.st!="nd")?sp[1]:"";p._s=[]});geoStats.k=null;SG.lk=""}
 async function GEOUP(f,buf0){const M=$("geomsg"),say=(t,bad)=>{if(M){M.innerHTML=t;M.style.color=bad?"var(--r)":"var(--c)"}};
  if(ROLE!="controlador"||(window.PMSP&&PMSP.g))return say("Só os controladores podem enviar a planilha de endereços.",1);
  try{if(typeof XLSX=="undefined")throw new Error("A biblioteca de leitura de Excel não carregou. Verifique a internet e recarregue a página.");say("Lendo "+h(f.name)+"…");
   const buf=buf0||await readAB(f),wb=XLSX.read(buf,{type:"array"}),o=GEOBUILD(wb.SheetNames.map(n=>({n,A:XLSX.utils.sheet_to_json(wb.Sheets[n],{header:1,defval:null,raw:true,blankrows:false})})));
   if(!DB)throw new Error("Sem conexão com o servidor.");o.u=Date.now();o.by=(window.PMSP&&PMSP.user)||"";o.fn=String(f.name||"").slice(0,120);MY.add(o.u);await DB.doc("privado/geo").set(o);
   GEO=o;GEOL=true;GEOIX();SG.tab={};SG.rt={};const c=k=>o.P.filter(p=>p.k==k).length;
-  say(`✅ Planilha de endereços enviada: ${c("ba")} bases do cliente, ${c("of")} oficinas, ${c("en")} prestadores de ensaio${c("lo")?" e "+c("lo")+" garagem(ns) da locadora":""}. Vale para todos os controladores.`);draw()}
+  const G=o.P.filter(p=>p._g&&p._g.has),gs=k=>G.filter(p=>p._g.st==k).length;
+  say(`✅ Planilha de endereços enviada: ${c("ba")} bases do cliente, ${c("of")} oficinas, ${c("en")} prestadores de ensaio${c("lo")?" e "+c("lo")+" garagem(ns) da locadora":""}. Vale para todos os controladores.`+(G.length?`<br>Serviços lidos em ${G.length} oficinas: ${gs("ok")} ativas com serviço informado, ${gs("nd")} sem informação, ${gs("desc")} descredenciadas (saem da sugestão), ${gs("pecas")} só peças/pneus${gs("ens")?", "+gs("ens")+" só ensaio":""}.`:""));draw()}
  catch(x){say(h(x.message||"Não foi possível ler a planilha."),1)}}
 /* nome abreviado da base de frota (BASE CENTRAL, BASE PORTO…) → base da planilha; reserva parte da garagem da locadora */
 function gseq(a,b){let j=0,sc=0;for(const t of a){let ok=false;while(j<b.length){const g=b[j++];if(g===t){sc+=2;ok=true;break}if(g.startsWith(t)||GAB[t]===g){sc+=1;ok=true;break}}if(!ok)return 0}return sc-.1*Math.max(0,b.length-a.length)}
@@ -1731,18 +1777,28 @@ function geoBase(b,ct){if(!GEO||!b)return null;const a=gtk(b);if(!a.length)retur
  GEO.P.forEach(p=>{if(p.k!="ba"&&p.k!="lo")return;let s=gseq(a,p._t);if(s<=0)s=gseq(a,p._ta)*.5;if(s<=0)return;if(ct&&p.c&&p.c===ct)s+=.5;if(s>bs){bs=s;best=p}});return best}
 /* nome usado no painel ou na planilha de translados (OFICINA X, OF. MÓVEL…) × oficina da planilha de endereços */
 function gnm(n,p){const a=gtk(n);if(!a.length||(a.length==1&&(GGEN.has(a[0])||a[0].length<3)))return false;return a.every(t=>p._t.includes(t))||(p._c.length>0&&!(p._c.length==1&&GGEN.has(p._c[0]))&&p._c.every(t=>a.includes(t)))}
+/* outros controladores que já usam o painel: a lista ao vivo deles (painel/base de cada um, lida a cada 5 min) vale mais que a planilha de translados.
+   Conta como "usando" quem atualizou o painel nas últimas 48 h; para os outros, segue valendo a planilha de translados. */
+var SGO={t:0,w:0,L:[]};
+async function sgOthers(){if(SGO.w||Date.now()-SGO.t<3e5||CONS()||ROLE!="controlador"||!window.PMRAW||typeof spLoad!="function")return;SGO.w=1;
+ try{await spLoad();const S=window.PMSP||{},me=S.adm?"":(S.id||S.my||""),L=[];
+  for(const x of SPL){if(x.id===me)continue;try{const z=await PMRAW.doc("painel/base"+(x.id?"__"+x.id:"")).get();if(!z.exists)continue;const o=z.data()||{},u=+o.u||0;
+   L.push({id:x.id,n:cap(x.name),u,on:u>Date.now()-1728e5&&Array.isArray(o.d)&&o.d.length>0,d:(o.d||[]).filter(v=>v&&v.p&&v.o).map(v=>({p:String(v.p).toUpperCase(),o:String(v.o).toUpperCase(),dias:v.dias,e:v.e||""})),hit:ctlHit(x.id)})}catch(e){}}
+  SGO.L=L}catch(e){}SGO.t=Date.now();SGO.w=0;geoStats.k=null;if(TAB=="sugoficina")RENDERSUG()}
 /* por oficina: veículos lá agora (os do painel, ao vivo, + os dos outros controladores abertos na planilha de translados) e tempo mediano até liberar (últimos 60 dias) */
-function geoStats(){const key=(GEO?GEO.u:0)+"|"+(ESX?ESX.u:0)+"|"+D.length+"|"+Object.keys(EP).length+"|"+(CONS()?"*":(window.PMSP&&PMSP.id)||"");if(geoStats.k===key)return geoStats.c;geoStats.k=key;
+function geoStats(){const key=(GEO?GEO.u:0)+"|"+(ESX?ESX.u:0)+"|"+D.length+"|"+Object.keys(EP).length+"|"+(CONS()?"*":(window.PMSP&&PMSP.id)||"")+"|"+SGO.t;if(geoStats.k===key)return geoStats.c;geoStats.k=key;
  const S={},prov=GEO.P.filter(p=>p.k!="ba"),cache={},hit=n=>{if(!(n in cache))cache[n]=prov.filter(p=>gnm(n,p));return cache[n]},miss={};prov.forEach(p=>{S[p.id]={n:0,t:[],seen:false,vs:[],ps:new Set(),hd:null}});const myN=CONS()?"":cap(spUserName((window.PMSP&&PMSP.id)||""));const catOf=pl=>{const f=esFL(pl);if(!f)return null;const k=gtk(f.k||"");return{c:k.includes("PESADOS")?"PESADOS":k.includes("LEVES")?"LEVES":"",t:cap(f.t||"")}},okc=(p,c)=>!p._cat||!c||!c.c||p._cat===c.c;
  const mine=new Set();if(ESX){esPrep();(CONS()?ESX.L.filter(r=>r._mi):esScope().filter(r=>r._mi!==false)).forEach(r=>mine.add(r.c))}
- D.forEach(v=>{if(!v.o)return;const c=catOf(v.p);hit(v.o).forEach(p=>{if(!okc(p,c))return;const q=S[p.id];q.seen=true;if(!q.ps.has(v.p)){q.ps.add(v.p);q.vs.push({p:v.p,c:cap(v.ct||myN||""),d:v.dias,src:"p"})}})});let mov=[];
+ D.forEach(v=>{if(!v.o)return;const c=catOf(v.p);hit(v.o).forEach(p=>{if(!okc(p,c))return;const q=S[p.id];q.seen=true;if(!q.ps.has(v.p)){q.ps.add(v.p);q.vs.push({p:v.p,c:cap(v.ct||myN||"Você"),d:v.dias,src:"p"})}})});let mov=[];
+ const OL=CONS()?[]:SGO.L.filter(x=>x.on),actC=c=>OL.some(x=>x.hit(c));
+ OL.forEach(x=>x.d.forEach(v=>{const c=catOf(v.p);hit(v.o).forEach(p=>{if(!okc(p,c))return;const q=S[p.id];q.seen=true;if(!q.ps.has(v.p)){q.ps.add(v.p);q.vs.push({p:v.p,c:x.n,d:v.dias,src:"o"})}})}));
  if(ESX){const lim=isoAdd(ESX.T,-120),W=isoAdd(ESX.T,-60),W60=isoAdd(ESX.T,-59),H180=isoAdd(ESX.T,-180);ESX.L.forEach(r=>{if(r.bad||!r.o)return;if(/MOVEL/.test(r.g)){if(r.d&&r.b>=W)mov.push(Math.max(0,isoDiff(r.b,r.d)));return}const ps=hit(r.o);
-  if(!ps.length){if(r.b>=W&&!/GUINCHO/.test(r.g)&&!/^REBOQUE/.test(r.o))miss[r.o]=(miss[r.o]||0)+1;return}const c=catOf(r.p);ps.forEach(p=>{if(!okc(p,c))return;const q=S[p.id];q.seen=true;if(!r.d&&r.b>=lim&&!mine.has(r.c)&&!q.ps.has(r.p)){q.ps.add(r.p);q.vs.push({p:r.p,c:cap(r.c),d:isoDiff(r.b,ESX.T)+1,src:"e"})}
+  if(!ps.length){if(r.b>=W&&!/GUINCHO/.test(r.g)&&!/^REBOQUE/.test(r.o))miss[r.o]=(miss[r.o]||0)+1;return}const c=catOf(r.p);ps.forEach(p=>{if(!okc(p,c))return;const q=S[p.id];q.seen=true;if(!r.d&&r.b>=lim&&!mine.has(r.c)&&!actC(r.c)&&!q.ps.has(r.p)){q.ps.add(r.p);q.vs.push({p:r.p,c:cap(r.c),d:isoDiff(r.b,ESX.T)+1,src:"e"})}
   if(r.b>=H180&&r.b<=ESX.T&&(!r.d||r.d>W60)){const i0=Math.max(0,isoDiff(W60,r.b)),i1=r.d?Math.min(59,isoDiff(W60,r.d)-1):59;if(i1>=i0){if(!q.hd)q.hd=new Array(61).fill(0);q.hd[i0]++;q.hd[i1+1]--}}if(r.d&&r.b>=W)q.t.push(Math.max(0,isoDiff(r.b,r.d)));})})}
  else Object.values(EP).forEach(o=>{if(o.x||!o.b||!o.o)return;const ps=hit(o.o);if(!ps.length){if(!/M[OÓ]VEL/.test(nrm(o.o)))miss[o.o]=(miss[o.o]||0)+1;return}const c=catOf(o.p);ps.forEach(p=>{if(!okc(p,c))return;const q=S[p.id];q.seen=true;if(o.dc)q.t.push(Math.max(0,isoDiff(o.b,o.dc)));})});
  const med=a=>{if(!a.length)return null;const s=[...a].sort((x,y)=>x-y);return s[Math.floor((s.length-1)/2)]};let all=[];Object.values(S).forEach(q=>{q.r=med(q.t);all=all.concat(q.t);q.n=q.vs.length;delete q.ps;
   if(q.hd){let c=0;const dl=[];for(let i=0;i<60;i++){c+=q.hd[i];dl.push(c)}dl.sort((a,b)=>a-b);q.med=dl[29];q.cap=Math.max(1,dl[53])}q.hd=null});
- return geoStats.c={S,gm:med(all),mov:med(mov),miss:Object.entries(miss).sort((a,b)=>b[1]-a[1])}}
+ return geoStats.c={S,gm:med(all),mov:med(mov),miss:Object.entries(miss).sort((a,b)=>b[1]-a[1]),ol:OL.map(x=>x.n)}}
 var hav=(a,b)=>{const r=Math.PI/180,x=Math.sin((b[0]-a[0])*r/2)**2+Math.cos(a[0]*r)*Math.cos(b[0]*r)*Math.sin((b[1]-a[1])*r/2)**2;return 12742*Math.asin(Math.sqrt(x))},
  geoEst=(o,p)=>{const d=hav(o,[p.la,p.lo])*1.35,v=25+Math.min(25,d*.5);return{t:d/v*3600,d:d*1000}},
  fmT=s=>{const m=Math.max(1,Math.round(s/60));return m<60?m+" min":Math.floor(m/60)+" h"+(m%60?" "+m%60+" min":"")},fmD=m=>m>=1e4?Math.round(m/1000)+" km":(m/1000).toFixed(1).replace(".",",")+" km",
@@ -1797,17 +1853,92 @@ function sgVeh(p){if(!p)return null;return{p,fl:esFL(p)||null,v:D.find(x=>x.p===
 function sgOrigin(V){const P=GEO.P;if(SG.om=="custom")return SG.o?{id:"#",la:SG.o[0],lo:SG.o[1],n:SG.on||"Ponto escolhido",a:""}:null;
  if(SG.om=="cur"){const q=V&&V.v&&V.v.o?P.find(p=>p.k!="ba"&&gnm(V.v.o,p)):null;return q?Object.assign({},q,{n:q.n+" (onde o veículo está)"}):null}
  if(SG.om){const q=P.find(p=>p.id===SG.om);if(q)return q}return V&&V.fl?geoBase(V.fl.b,V.fl.g):null}
-function sgCands(V){const vt=V&&V.fl?gtk((V.fl.k||"")+" "+(V.fl.t||"")):[],cat=vt.includes("PESADOS")?"PESADOS":vt.includes("LEVES")?"LEVES":"",moto=vt.some(t=>/^MOTO/.test(t));
- return GEO.P.filter(p=>{if(SG.k=="en"?p.k!="en":(p.k!="of"&&p.k!="lo"))return false;if(cat&&p._cat&&p._cat!==cat)return false;if(p._sp=="motos"&&vt.length&&!moto&&!(p._s||[]).length)return false;
-  if(p.v&&vt.length){const pv=gtk(p.v);if(!pv.includes("TODOS")&&!vt.some(t=>pv.includes(t)))return false}if(SG.sv&&p._s.length&&!p._s.includes(SG.sv))return false;return true})}
+function sgVC(fl){if(!fl)return[];const k=nrm(fl.k||""),t=nrm(fl.t||""),o=[];if(/MOTO/.test(t))return["MOTO"];if(/SUPERVIS/.test(t))o.push("SUP");if(/PICAPE LEVE/.test(t))o.push("PL");if(/PICAPE MEDIA/.test(t))o.push("PM");if(/FURG/.test(t))o.push("FUR");if(/PESAD/.test(k))o.push("PES");if(!o.length&&/LEVE/.test(k))return GLIGHT.slice();return o}
+const sgBr=fl=>{if(!fl)return"";const z=nrm((fl.m||"")+" "+(fl.md||""));const b=GBR.find(([re])=>re.test(z));return b?b[1]:""};
+/* serviço que o veículo precisa: pelo grupo de serviço da manutenção (automático) ou o escolhido no filtro */
+function sgNeed(V){if(SG.sv=="*")return[];if(SG.sv)return[SG.sv];if(SG.cs&&SG.cs.length&&SG.cp&&SG.cp===SG.p)return SG.cs;const g=V&&V.v&&V.v.g?[].concat(V.v.g):[];return gsvc(g.join(" "))}
+function sgCands(V){const fl=V&&V.fl,vc=sgVC(fl),br=sgBr(fl),N=sgNeed(V),X={desc:0,pecas:0,gar:0,ens:0,veh:0,br:0,sv:0},M=new Map(),nm=a=>a.map(c=>GSVN[c].toLowerCase()).join(" e ");
+ const L=GEO.P.filter(p=>{const g=p._g;
+  if(SG.k=="en"){if(p.k=="en")return true;if(p.k=="of"&&g&&g.st=="ens"){M.set(p.id,{pen:0,tag:"ensaio"});return true}return false}
+  if(p.k!="of"&&p.k!="lo")return false;/* garagem da locadora: só para veículo reserva, até segunda ordem da gestão */if(p.k=="lo"){if(!(fl&&/RESERV/.test(nrm(fl.s||"")))){X.lo=(X.lo||0)+1;return false}M.set(p.id,{pen:0,tag:"garagem · veículo reserva"});return true}
+  if(!g||!g.has){/* oficina sem as colunas novas: regra antiga pelo nome */const c=vc.includes("PES")&&vc.length==1?"PESADOS":vc.length&&!vc.includes("PES")?"LEVES":"";if(c&&p._cat&&p._cat!==c){X.veh++;return false}if(p._sp=="motos"&&vc.length&&!vc.includes("MOTO")){X.veh++;return false}return true}
+  if(g.st=="desc"){X.desc++;return false}if(g.st=="pecas"){X.pecas++;return false}if(g.st=="ens"){X.ens++;return false}
+  if(g.gar&&!N.includes("GAR")){X.gar++;return false}
+  if(g.veh&&vc.length&&!vc.some(c=>g.veh.has(c))){X.veh++;return false}
+  if(g.brx&&br&&br!==g.br){X.br++;return false}
+  let pen=0,tag="";
+  if(N.includes("GAR")&&!g.sv.has("GAR")&&g.st!="nd"){X.sv++;return false}
+  if(N.length&&!(g.all&&!N.includes("GAR"))){if(g.st=="nd"){pen=10;tag="serviços não informados"}else{const cv=N.filter(c=>g.sv.has(c));if(!cv.length){X.sv++;return false}if(cv.length<N.length){pen=12;tag="faz só "+nm(cv)}else if(g.only&&g.sv.size<=2){pen=-5;tag="especialista em "+nm(cv)}}}
+  else if(!N.length&&!g.all&&g.st=="ok"&&g.sv.size&&!g.sv.has("MEC")&&!g.sv.has("ELE")){pen=30;tag="especializada em "+nm([...g.sv])}
+  else if(g.st=="nd"){pen=8;tag="serviços não informados"}
+  if(vc.includes("MOTO")&&g.veh&&g.veh.size==1&&g.veh.has("MOTO")){pen-=10;tag=tag||"especializada em motos"}
+  if(g.br&&!g.brx&&br){if(br===g.br){pen-=8;tag=tag||"especializada em "+gBrN(g.br)}else{pen+=15;tag=tag||"especializada em "+gBrN(g.br)}}
+  if(pen||tag)M.set(p.id,{pen,tag});return true});
+ sgCands.x=X;sgCands.m=M;sgCands.n=N;return L}
 function sgRank(O,L,V){const ok=O.la.toFixed(5)+","+O.lo.toFixed(5),T=SG.tab[ok],ST=geoStats(),w=GPRE[SG.pre]||GPRE.eq,moto=V&&V.fl?gtk((V.fl.k||"")+" "+(V.fl.t||"")).some(t=>/^MOTO/.test(t)):false,
   kn=Object.values(ST.S).filter(q=>q.seen),srt=a=>a.sort((x,y)=>x-y),qn=srt(kn.map(q=>q.cap!=null?Math.min(1,q.n/(q.cap*1.5)):Math.min(1,q.n/15))),qr=srt(kn.map(q=>q.r).filter(v=>v!=null)),
   lU=qn.length?qn[Math.floor((qn.length-1)/2)]:0,rU=qr.length?qr[Math.floor(.75*(qr.length-1))]:(ST.gm||0);
  const R=L.map(p=>{const m=T&&T.m&&T.m[p.id],e=geoEst([O.la,O.lo],p),t=m?m.t:e.t,d=m&&m.d!=null?m.d:e.d,s=ST.S[p.id]||{n:0,r:null,seen:false},r=s.r!=null?s.r:rU;
   const ld=!s.seen?lU:s.cap!=null?Math.min(1,s.n/(s.cap*1.5)):Math.min(1,s.n/15),sc=w[1]*Math.min(1,t/5400)+w[2]*ld+w[3]*Math.min(1,r/10);let pen=0,tag="";
-  if(p._sp&&!(p._s||[]).length){if(p._sp=="motos"&&moto)pen=-10;else{pen=35;tag=p._sp}}
+  const ci=sgCands.m&&sgCands.m.get(p.id);if(ci){pen=ci.pen;tag=ci.tag}else if(p._sp&&!(p._g&&p._g.has)){if(p._sp=="motos"&&moto)pen=-10;else{pen=35;tag="especializada em "+p._sp}}
   return{p,t,d,est:!m,n:s.n,seen:s.seen,r:s.r,vs:s.vs||[],med:s.med,cap:s.cap,tag,pen,nota:Math.max(0,Math.min(100,Math.round(100*(1-sc))-pen))}}).sort((a,b)=>b.nota-a.nota||a.t-b.t);
  return{R,ok,T,ST}}
+/* ===== Manutenção por oficina: veículos em cada oficina agora, de todas as oficinas (com ou sem endereço na planilha de endereços) =====
+   Fontes: o seu painel ao vivo; o painel ao vivo dos outros controladores que já usam o painel; e, para os demais, as notas abertas da planilha de translados
+   (sem data de devolução, SMV dos últimos 180 dias, sem guincho/reboque). Cada placa conta uma vez. */
+function sgOccAll(){const key=geoStats.k+"|"+(ESX?ESX.u:0)+"|"+D.length+"|"+SGO.t;if(sgOccAll.k===key)return sgOccAll.c;sgOccAll.k=key;
+ const prov=GEO?GEO.P.filter(p=>p.k!="ba"):[],cache={},hit=n=>{if(!(n in cache))cache[n]=prov.filter(p=>gnm(n,p));return cache[n]},seen=new Set(),G={},
+  catOf=pl=>{const f=esFL(pl);if(!f)return"";const k=gtk(f.k||"");return k.includes("PESADOS")?"PESADOS":k.includes("LEVES")?"LEVES":""},
+  add=(o,pl,ct,d,src)=>{pl=npl(pl);if(!pl||seen.has(pl))return;const on=String(o||"").trim().toUpperCase();if(/GUINCHO|^REBOQUE/.test(on))return;seen.add(pl);
+   let k,n,p=null;if(!on||on=="-"||/^#/.test(on)){k="#";n="Sem oficina informada"}else if(/M[OÓ]VEL/.test(nrm(on))&&/^OF/.test(nrm(on))){k="#M";n="Oficina móvel"}else{const hs=hit(on),c=catOf(pl);p=hs.find(x=>!x._cat||!c||x._cat===c)||hs[0]||null;
+    if(p){k=p.id;n=p.n}else{k="N:"+gtk(on).join(" ");n=cap(on)}}
+   const g=G[k]=G[k]||{k,n,p,c:0,vs:[],by:{}};g.c++;g.vs.push({p:pl,c:ct||"—",d,src});g.by[ct||"—"]=(g.by[ct||"—"]||0)+1};
+ const myN=CONS()?"":cap(spUserName((window.PMSP&&PMSP.id)||""));D.forEach(v=>add(v.o,v.p,cap(v.ct||myN||"Você"),v.dias,"p"));
+ const OL=CONS()?[]:SGO.L.filter(x=>x.on),actC=c=>OL.some(x=>x.hit(c));OL.forEach(x=>x.d.forEach(v=>add(v.o,v.p,x.n,v.dias,"o")));
+ if(ESX){esPrep();const mine=new Set();(CONS()?ESX.L.filter(r=>r._mi):esScope().filter(r=>r._mi!==false)).forEach(r=>mine.add(r.c));const lim=isoAdd(ESX.T,-180);
+  ESX.L.forEach(r=>{if(r.bad||r.d||!r.b||r.b<lim||mine.has(r.c)||actC(r.c))return;add(r.o,r.p,cap(r.c||""),isoDiff(r.b,ESX.T)+1,"e")})}
+ return sgOccAll.c=Object.values(G).sort((a,b)=>(a.k=="#")-(b.k=="#")||b.c-a.c||a.n.localeCompare(b.n))}
+function sgOcc(L){if(!GEO||SG.k!="of")return"";const R=sgOccAll(),ST=geoStats(),ok=new Set((L||[]).map(p=>p.id));
+ if(!R.length)return`<div class="sub" style="margin:0">Nenhum veículo em oficina agora${ESX?"":" no seu painel. Envie a planilha de translados em Atualizar dados (quadro 🚚) para ver os de todos os controladores"}.</div>`;
+ const tot=R.reduce((s,x)=>s+x.c,0),mx=Math.max(...R.map(x=>x.c)),all=SG.oca,show=all?R:R.slice(0,30),src=[ESX?"planilha de translados de "+fm(ESX.T):"",(ST.ol&&ST.ol.length?"ao vivo: o seu painel e o de "+ST.ol.join(", "):"o seu painel, ao vivo")].filter(Boolean).join(" + "),
+  lt=x=>{const q=x.p&&ST.S[x.p.id];if(!q||q.cap==null)return"";return x.c>=Math.max(2,q.cap)&&x.c>q.med?"c":x.c>q.med?"m":"t"},LT={c:"cheia",m:"movimentada",t:"tranquila"},noAd=R.filter(x=>!x.p&&x.k[0]!="#").length;
+ return`<div class="sgoh"><b>🔧 Manutenção por oficina</b><span>${tot} veículo(s) em ${R.filter(x=>x.k!="#").length} oficina(s) · ${h(src)}</span></div>
+ <div class="sgbars" role="list">${show.map(x=>{const l=lt(x),sel=x.p&&ok.has(x.p.id),q=x.p&&ST.S[x.p.id],tt=[x.n+": "+x.c+" veículo(s) agora",l?LT[l]+(q&&q.med!=null?" (costuma ter "+(q.med==q.cap?q.med:q.med+" a "+q.cap)+" por dia)":""):"",Object.entries(x.by).sort((a,b)=>b[1]-a[1]).map(([k,n])=>k+" "+n).join(" · "),x.p?(sel?"clique para ver a rota":"não atende esse veículo/serviço"):x.k=="#"?"":"sem endereço na planilha de endereços"].filter(Boolean).join("\n");
+  return`<div class="sgbc${l?" sgb-"+l:""}${x.p?"":" na"}${sel?" ck":""}" role="listitem"${sel?` data-sgs="${h(x.p.id)}"`:""} title="${h(tt)}"><em>${x.c}</em><i style="height:${Math.max(4,Math.round(x.c/mx*100))}%"></i><span>${h(x.n)}${x.p||x.k[0]=="#"?"":" *"}</span></div>`}).join("")}</div>
+ <div class="sgbl">${R.length>30?`<button type="button" class="x" id="sgoca">${all?"Mostrar só as 30 com mais veículos":"Ver todas as "+R.length+" oficinas"}</button>`:""}<span class="sub" style="margin:0">Cor da barra: <b style="color:#B3121A">vermelho = cheia</b>, <b style="color:#A07800">amarelo = movimentada</b>, <b style="color:#2B6CC4">azul = normal</b> (comparando com quanto ela costuma ter por dia). Passe o mouse para ver de quais controladores são${noAd?` · * = ${noAd} oficina(s) sem endereço na planilha de endereços: ficam fora da sugestão até você incluir`:""}.</span></div>`}
+/* ===== colar o chamado: texto do WhatsApp (PLACA: …) ou linha da planilha de translado =====
+   Lê a placa, a origem (vira o ponto de partida) e o serviço pelo que foi pedido na solicitação. */
+var GSQ=[["ELE",/GIRO ?(FLEX|LED)|GIROLED|SIRENE|SONORIZADOR|BUZINA|FAROL|FAROIS|LANTERNA|LAMPADA|PISCA|\bLUZ(ES)?\b|ILUMINAC|BATERIA|ALTERNADOR|MOTOR DE ARRANQUE|\bPARTIDA\b|NAO (LIGA|PEGA|DA PARTIDA)|ELETRIC|CHICOTE|FUSIVEL|TACOGRAF|RASTREADOR|INVERSOR|TOMADA|RADIO|PAINEL APAGAD|LUZ DE INJE|SENSOR/],
+ ["MEC",/MOTOR|OLEO|FREIO|PASTILHA|LONA|EMBREAGEM|CAMBIO|MARCHA|ESQUENTA|AQUEC|RADIADOR|ARREFEC|AGUA DO MOTOR|CORREIA|REVISAO|PREVENTIVA|FUMACA|FALHAND|PERDA DE (FORCA|POTENCIA)|INJEC|TURBO|DIRECAO|ESCAPAMENTO|ROLAMENTO|\bCUBO\b|BARULHO|RUIDO|VAZAMENTO(?! HIDR)|COMBUSTIVEL|BOMBA|\bEMBUCH|NAO ANDA/],
+ ["SUS",/AMORTEC|\bMOLAS?\b|SUSPENS|BANDEJA|\bPIVO\b|BIELETA|BUCHA|TERMINAL DE DIRE|FEIXE/],
+ ["HID",/HIDRAUL|\bCESTO\b|\bLANCA\b|PATOLA|SAPATA|CILINDRO|GUINDAUTO|MUNCK|TOMADA DE FORCA|\bPTO\b|ISOLAMENTO|ESTABILIZADOR/],
+ ["FUN",/AMASSA|BATIDA|COLISAO|CHOQUE|PINTURA|LATARIA|ARRANH|RISCAD|FUNILAR|SINISTRO|AVARIA|RETROVISOR|ESPELHO|MACANETA|PARALAMA|PARA-?LAMA|RETROVISOR QUEBR/],
+ ["VID",/PARA-?BRISA|VIDRO (TRINC|QUEBR|RACH)|TRINCAD|PARABRISA/],
+ ["AR",/AR.?CONDIC|NAO GELA|CLIMATIZ|\bAR NAO\b/],
+ ["ADE",/ADESIV|PLOTAG|LOGOMARCA|IDENTIFICACAO VISUAL/],
+ ["ADP",/SUPORTE D[EA] ESCADA|ADAPTAC|INSTALAC|CARROCERIA|CAIXA DE FERRAMENTA|\bBAU\b|PRATELEIRA/],
+ ["GAR",/GARANTIA|RECALL/]];
+function sgSvTxt(t){const z=nrm(t||"").replace(/\s+/g," "),o=[],w={},wd=m=>{let a=m.index,b=m.index+m[0].length;while(a>0&&/[A-Z0-9-]/.test(z[a-1]))a--;while(b<z.length&&/[A-Z0-9-]/.test(z[b]))b++;return z.slice(a,b).toLowerCase()};
+ GSQ.forEach(([c,re])=>{const m=z.match(re);if(m){o.push(c);w[c]=wd(m)}});
+ /* barulho, ruído, vazamento: genéricos; se outro serviço apareceu, não conta mecânica só por eles */if(o.includes("MEC")&&o.length>1&&/^(barulho|ruido|vazamento|nao)/.test(w.MEC||"")){const z2=z.replace(/BARULHO|RUIDO|VAZAMENTO|NAO ANDA/g,"");if(!(GSQ.find(x=>x[0]=="MEC")[1]).test(z2)){o.splice(o.indexOf("MEC"),1);delete w.MEC}}
+ /* "vidro elétrico" é elétrica, não vidraçaria */if(/VIDRO ELETRIC|MAQUINA DE VIDRO/.test(z)&&o.includes("VID")){o.splice(o.indexOf("VID"),1);if(!o.includes("ELE")){o.push("ELE");w.ELE="vidro elétrico"}}
+ return{c:o,w}}
+function sgParseCh(t){t=String(t||"");if(/\t/.test(t)){const P=trParse(t);if(P)return{p:P.PLACA,or:P.ORIGEM,m:P.MODELO,s:P["SOLICITAÇÃO DO USUÁRIO"],g:"",d:P.DESTINO||"",src:"planilha"}}
+ const L=t.replace(/\*/g,"").replace(/\r/g,"").split("\n"),o={p:"",or:"",m:"",s:"",g:"",d:"",src:"chamado"};let cur="";
+ L.forEach(ln=>{const m=ln.match(/^\s*([A-ZÀ-Úa-zà-ú .]+?)\s*:\s*(.*)$/);const k=m?nrm(m[1]).trim():"";
+  if(m&&/^(PLACA|ORDEM|MODELO|CONTRATO|SMV|ORIGEM|OFICINA|DESTINO|GRUPO DE SERVICO|SOLICITACAO|USUARIO|TELEFONE)$/.test(k)){cur=k;const v=m[2].trim();if(k=="PLACA")o.p=v;else if(k=="ORIGEM")o.or=v;else if(k=="MODELO")o.m=v;else if(k=="GRUPO DE SERVICO")o.g=v;else if(k=="OFICINA"||k=="DESTINO")o.d=v;else if(k=="SOLICITACAO")o.s=v;return}
+  if(cur=="SOLICITACAO"&&ln.trim()&&!/NOTA CONECTA/i.test(ln))o.s+=(o.s?"\n":"")+ln.trim()});
+ if(!o.p){const pm=nrm(t).match(/\b([A-Z]{3}-?\d[A-Z0-9]\d{2})\b/);if(pm)o.p=pm[1]}if(!o.p&&!o.s)return null;o.p=nrm(o.p).replace(/[^A-Z0-9]/g,"");return o}
+function sgChamado(t){const out=$("sgcr");if(!String(t||"").trim()){SG.cs=null;SG.cp="";if(out)out.innerHTML="";RENDERSUG();return}
+ const P=sgParseCh(t);if(!P){if(out)out.innerHTML='<span style="color:#E4141C">Não reconheci o chamado. Cole o texto com "PLACA:" e "SOLICITAÇÃO:", ou a linha da planilha de translado (colunas J a R).</span>';return}
+ const S=sgSvTxt([P.s,P.g].join(" ")),bits=[];SG.cs=S.c;SG.cp=P.p;SG.sel=null;
+ if(P.p){SG.p=P.p;const ip=$("sgp");if(ip)ip.value=P.p;bits.push("placa <b>"+h(P.p)+"</b>")}
+ SG.om="";if(P.or){const fl=esFL(P.p),b=geoBase(P.or,fl&&fl.g);if(b){SG.om=b.id;bits.push("partida <b>"+h(b.n)+"</b> (origem do chamado: "+h(P.or)+")")}else bits.push('origem "'+h(P.or)+'" não achada na planilha de endereços: partida pela base do veículo')}
+ bits.push(S.c.length?"serviço lido: <b>"+S.c.map(c=>h(GSVN[c])+" ("+h(S.w[c])+")").join(", ")+"</b>":"não deu para saber o serviço pela solicitação: vale o grupo de serviço do veículo");
+ if(P.d&&!/^-?$/.test(P.d.trim()))bits.push("oficina indicada no chamado: <b>"+h(cap(P.d))+"</b>");
+ if(SG.sv){SG.sv="";const sx=$("sgs");if(sx)sx.value=""}
+ if(out)out.innerHTML="✅ "+bits.join(" · ")+' · <button type="button" class="x" id="sgcx">Limpar</button>';RENDERSUG()}
+function sgXT(){const X=sgCands.x;if(!X)return"";const L=[["desc","descredenciada(s)"],["veh","não atende(m) esse tipo de veículo"],["sv","não faz(em) o serviço"],["br","só atende(m) outra marca"],["gar","só garantia"],["pecas","só venda de peças ou pneus"],["ens","só ensaio"],["lo","garagem da locadora (só para reserva)"]];return L.filter(([k])=>X[k]).map(([k,t])=>X[k]+" "+t).join(", ")}
 function sgMapClick(la,lo,id){if(id&&id!="#"){SG.sel=id;RENDERSUG()}}
 /* endereço digitado: coordenadas ou link do Google Maps; nome de base ou oficina da planilha; senão, busca no OpenStreetMap (Nominatim, uma busca por vez) */
 const sgShort=n=>String(n||"").split(",").map(x=>x.trim()).filter(Boolean).slice(0,4).join(", ");
@@ -1823,13 +1954,13 @@ async function sgFind(q){q=String(q||"").trim();const out=$("sgar");if(!out)retu
 function geoParse(s){s=String(s||"");const m=s.match(/@(-?\d+\.\d+),(-?\d+\.\d+)/)||s.match(/!3d(-?\d+\.\d+)!4d(-?\d+\.\d+)/)||s.match(/[?&](?:q|query|ll|destination|origin)=(-?\d+\.\d+)(?:,|%2C)\s*(-?\d+\.\d+)/i)||s.match(/(-?\d{1,2}[.,]\d+)\s*[,;\s]\s*(-?\d{1,3}[.,]\d+)/);
  if(!m)return null;const la=parseFloat(m[1].replace(",",".")),lo=parseFloat(m[2].replace(",","."));return isFinite(la)&&isFinite(lo)&&Math.abs(la)<=90&&Math.abs(lo)<=180?[la,lo]:null}
 function SGSK(){return`<div id="sgempty" class="sub" style="display:none;margin:0 0 12px">Para usar a sugestão, envie abaixo a planilha <b>CADASTRO GEOGRÁFICO</b> com as bases e as oficinas (latitude e longitude).</div>
-<div id="sgmain"><div class="sgf"><label>Placa<input id="sgp" list="sgpl" placeholder="Digite ou escolha" autocomplete="off" spellcheck="false"></label><datalist id="sgpl"></datalist>
+<div id="sgmain"><div id="sgoc" class="sgoc"></div><div class="sgf"><label>Placa<input id="sgp" list="sgpl" placeholder="Digite ou escolha" autocomplete="off" spellcheck="false"></label><datalist id="sgpl"></datalist>
 <label>Ponto de partida<select id="sgo"></select></label><label>Prioridade<select id="sgpr">${Object.entries(GPRE).map(([k,v])=>`<option value="${k}">${v[0]}</option>`).join("")}</select></label>
 <label>Procurar<select id="sgk"><option value="of">Oficinas</option><option value="en">Prestadores de ensaio</option></select></label><label id="sgsx" style="display:none">Serviço<select id="sgs"></select></label>
-<label class="sgad">Ou digite o endereço de partida<span><input id="sga" placeholder="Ex.: Rua do Exemplo, 100, Centro, Rio de Janeiro" autocomplete="off" enterkeyhint="search"><button class="x" id="sgab" type="button">🔎 Buscar</button></span></label></div><div id="sgar" class="sub sgar"></div><div id="sgch" class="sgch"></div><div id="sgv" class="sub" style="margin:2px 0 10px"></div>
+<label class="sgad">Ou digite o endereço de partida<span><input id="sga" placeholder="Ex.: Rua do Exemplo, 100, Centro, Rio de Janeiro" autocomplete="off" enterkeyhint="search"><button class="x" id="sgab" type="button">🔎 Buscar</button></span></label></div><div id="sgar" class="sub sgar"></div><div id="sgch" class="sgch"></div><div id="sgv" class="sub" style="margin:2px 0 10px"></div><div class="sgpaste"><label><span>📋 Colar chamado</span><textarea id="sgcp" rows="2" placeholder="Cole aqui o chamado do WhatsApp (PLACA: …, ORIGEM: …, SOLICITAÇÃO: …) ou a linha da planilha de translado (colunas J a R): a placa, a partida e o serviço se preenchem sozinhos" spellcheck="false"></textarea></label><div id="sgcr" class="sub"></div></div>
 <div class="sgg"><div><div id="sgmap"></div><div class="sub" style="margin:4px 0 0">Arraste para mover · +/−, duplo clique ou Ctrl + roda do mouse para zoom · clique numa oficina do mapa ou da lista para ver a rota.</div></div><div id="sgl"></div></div>
 <div id="sgn" class="sub" style="margin:12px 0 0"></div></div>
-<div class="sgup ctl" id="sgup"><h3 class="fch">📥 Planilha de endereços (CADASTRO GEOGRÁFICO)</h3><div class="sub" style="margin:0 0 6px">Abas com ID, BASE (nome), ENDEREÇO, LATITUDE e LONGITUDE: bases do cliente, garagem da locadora, prestadores de serviços e de ensaios. Quando você incluir as colunas <b>SERVIÇOS</b> e <b>TIPOS DE VEÍCULO</b> nas oficinas, a sugestão passa a filtrar por elas. Vale para todos os controladores.</div><div class="up"><input type="file" id="geof" accept=".xlsx,.xlsm,.xls,.xlsb"></div><div id="geost" class="sub" style="margin:6px 0 0"></div><div id="geomsg" class="sub" style="margin:4px 0 0"></div></div>`}
+<div class="sgup ctl" id="sgup"><h3 class="fch">📥 Planilha de endereços (CADASTRO GEOGRÁFICO)</h3><div class="sub" style="margin:0 0 6px">Abas com ID, BASE (nome), ENDEREÇO, LATITUDE e LONGITUDE: bases do cliente, garagem da locadora, prestadores de serviços e de ensaios. Com as colunas <b>SERVIÇOS REALIZADOS</b> e <b>TIPOS DE VEÍCULOS</b> nas oficinas, a sugestão filtra pelo tipo do veículo e pelo serviço que ele precisa (DESCREDENCIADA sai da lista). Vale para todos os controladores.</div><div class="up"><input type="file" id="geof" accept=".xlsx,.xlsm,.xls,.xlsb"></div><div id="geost" class="sub" style="margin:6px 0 0"></div><div id="geomsg" class="sub" style="margin:4px 0 0"></div></div>`}
 function RENDERSUG(){const w=$("sgw");if(!w||TAB!="sugoficina")return;if(!w.dataset.ok){w.dataset.ok="1";w.innerHTML=SGSK();SG.map=GMAP($("sgmap"),sgMapClick);SG.fk=""}
  const can=ROLE=="controlador"&&!(window.PMSP&&PMSP.g),cnt=k=>GEO?GEO.P.filter(p=>k.includes(p.k)).length:0;$("sgup").style.display=can?"":"none";
  $("geost").innerHTML=GEO?`Planilha atual: <b>${cnt(["ba"])}</b> bases, <b>${cnt(["of","lo"])}</b> oficinas e <b>${cnt(["en"])}</b> prestadores de ensaio${GEO.u?" · enviada"+(GEO.by?" por "+h(cap(GEO.by)):"")+" em "+esWhen(GEO.u):""}.`:GEOL?"Ainda não enviada.":"Carregando…";
@@ -1837,44 +1968,45 @@ function RENDERSUG(){const w=$("sgw");if(!w||TAB!="sugoficina")return;if(!w.data
  const lk=GEO.u+"|"+FL.length+"|"+D.length;if(SG.lk!==lk){SG.lk=lk;const ps=[...new Set([...D.map(v=>v.p),...FL.map(x=>x.p)])].filter(Boolean);$("sgpl").innerHTML=ps.map(p=>`<option value="${h(p)}">`).join("");
   const B=GEO.P.filter(p=>p.k=="ba"||p.k=="lo"),grp=[["Garagem da locadora",B.filter(p=>p.k=="lo")],["Bases Alfa (RJ)",B.filter(p=>p.k=="ba"&&p.c!="ALFA CONECTA"&&!/VALE/.test(esH(p.id)))],["Bases Alfa Conecta",B.filter(p=>p.k=="ba"&&p.c=="ALFA CONECTA")],["Bases Alfa (Vale)",B.filter(p=>p.k=="ba"&&p.c!="ALFA CONECTA"&&/VALE/.test(esH(p.id)))]];
   $("sgo").innerHTML=`<option value="">Base do veículo (pela base de frota)</option><option value="cur">Onde o veículo está agora (oficina)</option>`+grp.filter(g=>g[1].length).map(([l,L])=>`<optgroup label="${l}">${L.map(p=>`<option value="${h(p.id)}">${h(p.n)}</option>`).join("")}</optgroup>`).join("")+`<option value="custom">Endereço digitado</option>`;
-  const SV=[...new Set(GEO.P.flatMap(p=>p._s||[]))].sort();$("sgsx").style.display=SV.length?"":"none";$("sgs").innerHTML=`<option value="">Qualquer</option>`+SV.map(s=>`<option value="${h(s)}">${h(s)}</option>`).join("")}
+  const SV=Object.keys(GSVN).filter(c=>GEO.P.some(p=>p._g&&p._g.sv.has(c)));$("sgsx").style.display=SV.length?"":"none";$("sgs").innerHTML=`<option value="">Automático (chamado ou grupo de serviço)</option><option value="*">Qualquer serviço</option>`+SV.map(c=>`<option value="${c}">${GSVN[c]}</option>`).join("")}
  $("sgo").value=SG.om;$("sgpr").value=SG.pre;$("sgk").value=SG.k;$("sgs").value=SG.sv;if(document.activeElement!==$("sgp"))$("sgp").value=SG.p;
- const aw=D.filter(v=>/TRANSLADO/.test(v.e||""));$("sgch").innerHTML=aw.length?`<span class="sub" style="margin:0">Aguardando translado:</span>`+aw.slice(0,14).map(v=>`<button type="button" data-sgv="${h(v.p)}"${v.p===SG.p?' class="on"':""}>${h(v.p)}${v.o?" · "+h(v.o):""}</button>`).join(""):"";
- const V=sgVeh(SG.p),O=sgOrigin(V),L=sgCands(V),M=SG.map,fl=V&&V.fl;
- $("sgv").innerHTML=!SG.p?"Escolha a placa (ou só o ponto de partida) para ver a oficina sugerida.":!fl?`<b>${h(SG.p)}</b> não está na base de frota: escolha o ponto de partida.`:`<b>${h(SG.p)}</b> · ${h(fl.m||"")} · ${h(cap(fl.k||""))}${fl.t?" ("+h(cap(fl.t))+")":""} · ${h(fl.g||"")} · base <b>${h(fl.b||"—")}</b>`+(!SG.om?(O?` → partida: <b>${h(O.n)}</b>`:` · <span style="color:#E4141C">não achei essa base na planilha de endereços: escolha a base em “Ponto de partida” ou digite o endereço</span>`):"")+(V.v?` · hoje: ${h(cap(V.v.e||""))}${V.v.o?" em "+h(V.v.o):""}`:"");
+ $("sgch").innerHTML="";
+ sgOthers();const V=sgVeh(SG.p),O=sgOrigin(V),L=sgCands(V),M=SG.map,fl=V&&V.fl;$("sgoc").innerHTML=sgOcc(L);
+ $("sgv").innerHTML=!SG.p?"Escolha a placa (ou só o ponto de partida) para ver a oficina sugerida.":!fl?`<b>${h(SG.p)}</b> não está na base de frota: escolha o ponto de partida.`:`<b>${h(SG.p)}</b> · ${h(fl.m||"")} · ${h(cap(fl.k||""))}${fl.t?" ("+h(cap(fl.t))+")":""} · ${h(fl.g||"")} · base <b>${h(fl.b||"—")}</b>`+(!SG.om?(O?` → partida: <b>${h(O.n)}</b>`:` · <span style="color:#E4141C">não achei essa base na planilha de endereços: escolha a base em “Ponto de partida” ou digite o endereço</span>`):"")+(V.v?` · hoje: ${h(cap(V.v.e||""))}${V.v.o?" em "+h(V.v.o):""}`:"")+(SG.k=="of"&&sgCands.n&&sgCands.n.length?` · serviço: <b>${h(sgCands.n.map(c=>GSVN[c]).join(", "))}</b>${SG.sv?"":SG.cs&&SG.cs.length&&SG.cp===SG.p?" (pelo chamado)":" (pelo grupo de serviço)"}`:"");
  if(!O){M.pts=L.map(p=>({id:p.id,la:p.la,lo:p.lo,c:"#7A8AA0",r:5,tt:p.n}));M.line=null;M.badge(SG.om=="cur"?"O veículo não está numa oficina com endereço na planilha.":"");if(SG.fk!=="none"){SG.fk="none";M.fit(L.map(p=>[p.la,p.lo]))}else M.draw();
   $("sgl").innerHTML=`<div class="sub">${SG.om=="custom"?"Digite o endereço de partida (ou cole o link do lugar no Google Maps) e toque em Buscar.":"Escolha a placa, a base de partida ou digite um endereço."}</div>`;$("sgn").innerHTML="";return}
  if(!SG.tab[O.la.toFixed(5)+","+O.lo.toFixed(5)])geoTable(O,GEO.P.filter(p=>p.k!="ba"));
- if(!L.length){$("sgl").innerHTML='<div class="sub">Nenhuma oficina da planilha atende esse filtro.</div>';M.pts=[{la:O.la,lo:O.lo,c:"#1F3A5F",r:9,t:"Partida",tt:O.n}];M.line=null;M.badge("");M.fit([[O.la,O.lo]]);return}
+ if(!L.length){$("sgl").innerHTML='<div class="sub">Nenhuma oficina da planilha atende esse filtro.'+(sgXT()?" Ficaram de fora: "+sgXT()+".":"")+(SG.sv?' Tente o serviço “Qualquer serviço”.':"")+'</div>';M.pts=[{la:O.la,lo:O.lo,c:"#1F3A5F",r:9,t:"Partida",tt:O.n}];M.line=null;M.badge("");M.fit([[O.la,O.lo]]);return}
  const {R,ok,T,ST}=sgRank(O,L,V),best=R[0],sel=R.find(x=>x.p.id===SG.sel)||best,rk=ok+">"+sel.p.id;let RT=SG.rt[rk];if(!RT){geoRoute(O,sel.p);RT=SG.rt[rk]}
  const rg=RT&&RT.g,tS=RT&&RT.t!=null?RT.t:sel.t,dS=RT&&RT.d!=null?RT.d:sel.d,pend=(T&&T.w)||(RT&&RT.w),est=!(RT&&RT.g)&&sel.est;
  M.pts=[...R.slice(10).filter(x=>x.p.id!==sel.p.id).map(x=>({id:x.p.id,la:x.p.la,lo:x.p.lo,c:"#B8C2CE",r:4,tt:x.p.n+" · "+fmT(x.t)})),...R.slice(0,10).map((x,i)=>({x,i})).sort((a,b)=>(a.x===sel)-(b.x===sel)).map(({x,i})=>({id:x.p.id,la:x.p.la,lo:x.p.lo,c:x===sel?"#E4141C":"#1F3A5F",r:x===sel?11:9,n:i+1,t:x===sel?x.p.n:"",tt:(i+1)+"º "+x.p.n+" · "+fmT(x.t)+" · nota "+x.nota})),{la:O.la,lo:O.lo,c:"#2f9e44",r:9,t:"Partida",tt:O.n}];
  M.line=rg?RT.g:[[O.la,O.lo],[sel.p.la,sel.p.lo]];M.dash=!rg;const fk=rk+"|"+(rg?"g":"");if(SG.fk!==fk){SG.fk=fk;M.fit([[O.la,O.lo],[sel.p.la,sel.p.lo],...(rg?RT.g:[])])}else M.draw();
  M.badge(`🚚 <b>${h(sel.p.n)}</b><br>⏱ <b>${fmT(tS)}</b> ${est?"(estimado pela distância)":"sem trânsito"} · ${fmD(dS)}${pend?'<br><small>calculando a rota…</small>':""}`);
+ const SVL=x=>{const g=x.p._g;return g&&g.has?`<small class="sgsv">🔧 ${h(gSvTxt(g))} · 🚘 ${h(gVhTxt(g))}</small>`:""},c1=t=>t.charAt(0).toUpperCase()+t.slice(1);
  const dd=v=>v==null?"—":v==0?"no mesmo dia":v==1?"1 dia":v+" dias",
   lot=x=>!x.seen||x.cap==null?null:x.n>=Math.max(2,x.cap)&&x.n>x.med?{k:"c",t:"cheia"}:x.n>x.med?{k:"m",t:"movimentada"}:{k:"t",t:"tranquila"},
   bk=x=>{const m={};x.vs.forEach(v=>{const k=v.c||"—";m[k]=(m[k]||0)+1});return Object.entries(m).sort((a,b)=>b[1]-a[1]).map(([k,n])=>k+" "+n).join(" · ")},
   NT=x=>`<em class="sgnt sgn-${x.nota>=80?"g":x.nota>=60?"n":"r"}" style="--v:${x.nota}" title="nota ${x.nota} de 100"><span>${x.nota}</span></em>`,nv=x=>x.seen?x.n:"—",vv=x=>x.seen&&x.n==1?"veículo":"veículos",
-  PL=x=>x.vs.length?`<details class="sgvd"><summary>Ver as ${x.vs.length} placa(s) que estão lá</summary>${x.vs.slice().sort((a,b)=>(b.d||0)-(a.d||0)).map(v=>`<div><b>${h(v.p)}</b> · ${h(v.c||"—")}${v.d!=null?" · "+v.d+" dia(s) parado":""}${v.src=="p"?" · pelo seu painel":""}</div>`).join("")}</details>`:"",
-  CH=x=>{const l=lot(x);return`<span class="sgc"><span>⏱ <b>${fmT(x.t)}</b>${x.est?"*":""}</span><span>📍 ${fmD(x.d)}</span><span class="${l?"sgl-"+l.k:x.seen?"":"sgnr"}"${x.seen?"":' title="Oficina sem registro na planilha de translados nem no painel"'}>🚗 ${x.seen?nv(x)+" "+vv(x)+(l?" · "+l.t:""):"sem registro"}</span><span>⏳ ${x.r!=null?dd(x.r):"—"}</span>${x.tag?`<span class="sgtg">${h(x.tag)}</span>`:""}</span>`},bl=lot(best);
- $("sgl").innerHTML=`<div class="sgb"><div class="sgbh"><span>🏆 Oficina sugerida</span>${NT(best)}</div><b class="sgbn">${h(best.p.n)}</b>${best.p.a?`<small>${h(best.p.a)}</small>`:""}
+  PL=x=>x.vs.length?`<details class="sgvd"><summary>Ver as ${x.vs.length} placa(s) que estão lá</summary>${x.vs.slice().sort((a,b)=>(b.d||0)-(a.d||0)).map(v=>`<div><b>${h(v.p)}</b> · ${h(v.c||"—")}${v.d!=null?" · "+v.d+" dia(s) parado":""}${v.src=="p"?" · pelo seu painel":v.src=="o"?" · pelo painel do controlador":""}</div>`).join("")}</details>`:"",
+  CH=x=>{const l=lot(x);return`<span class="sgc"><span>⏱ <b>${fmT(x.t)}</b>${x.est?"*":""}</span><span>📍 ${fmD(x.d)}</span><span class="${l?"sgl-"+l.k:x.seen?"":"sgnr"}"${x.seen?"":' title="Oficina sem registro na planilha de translados nem no painel"'}>🚗 ${x.seen?nv(x)+" "+vv(x)+(l?" · "+l.t:""):"sem registro"}</span><span>⏳ ${x.r!=null?dd(x.r):"—"}</span>${x.tag?`<span class="sgtg${x.pen<0?" ok":""}">${h(x.tag)}</span>`:""}</span>`},bl=lot(best);
+ $("sgl").innerHTML=`<div class="sgb"><div class="sgbh"><span>🏆 Oficina sugerida</span>${NT(best)}</div><b class="sgbn">${h(best.p.n)}</b>${best.p.a?`<small>${h(best.p.a)}</small>`:""}${SVL(best)}
  <div class="sgm4"><div><i>⏱</i><b>${fmT(best.t)}</b><span>de translado${best.est?" (estimado)":", sem trânsito"}</span></div><div><i>📍</i><b>${fmD(best.d)}</b><span>de distância</span></div>
  <div class="${bl?"sgl-"+bl.k:""}"><i>🚗</i><b>${nv(best)}</b><span>${best.seen?vv(best)+" lá agora":"sem registro de veículos"}${bl?` · <b class="sglot sgl-${bl.k}">${bl.t}</b>`:""}</span></div><div><i>⏳</i><b>${best.r!=null?dd(best.r):"—"}</b><span>para liberar (mediana)</span></div></div>
- ${bl?`<small>Costuma ter ${best.med==best.cap?best.med:best.med+" a "+best.cap} veículo(s) por dia.</small>`:""}${best.vs.length?`<small>De quem: ${h(bk(best))}</small>`:""}${best.tag?`<small class="sgw">⚠️ Oficina especializada em ${h(best.tag)}.</small>`:""}${PL(best)}
+ ${bl?`<small>Costuma ter ${best.med==best.cap?best.med:best.med+" a "+best.cap} veículo(s) por dia.</small>`:""}${best.vs.length?`<small>De quem: ${h(bk(best))}</small>`:""}${best.tag?`<small class="${best.pen<0?"sgok":"sgw"}">${best.pen<0?"✅":"⚠️"} ${h(c1(best.tag))}.</small>`:""}${PL(best)}
  <a class="sggm" href="${gmU(O,best.p)}" target="_blank" rel="noopener">🗺️ Rota com trânsito no Google Maps ↗</a></div>
- <div class="sglh">Ranking das oficinas</div>${R.slice(0,10).map((x,i)=>`<div class="sgr${x===sel?" on":""}" data-sgs="${h(x.p.id)}"><i class="sgk">${i+1}</i><div class="sgri"><b>${h(x.p.n)}</b>${CH(x)}${x===sel&&x!==best&&x.vs.length?`<small>De quem: ${h(bk(x))}</small>`:""}</div>${NT(x)}<a class="sggo" href="${gmU(O,x.p)}" target="_blank" rel="noopener" title="Abrir a rota no Google Maps (com trânsito)">↗</a></div>`).join("")}${R.length>10?`<div class="sub">+ ${R.length-10} oficina(s) com nota menor (pontos cinza no mapa).</div>`:""}`;
+ <div class="sglh">Ranking das oficinas</div>${R.slice(0,10).map((x,i)=>`<div class="sgr${x===sel?" on":""}" data-sgs="${h(x.p.id)}"><i class="sgk">${i+1}</i><div class="sgri"><b>${h(x.p.n)}</b>${SVL(x)}${CH(x)}${x===sel&&x!==best&&x.vs.length?`<small>De quem: ${h(bk(x))}</small>`:""}</div>${NT(x)}<a class="sggo" href="${gmU(O,x.p)}" target="_blank" rel="noopener" title="Abrir a rota no Google Maps (com trânsito)">↗</a></div>`).join("")}${R.length>10?`<div class="sub">+ ${R.length-10} oficina(s) com nota menor (pontos cinza no mapa).</div>`:""}`;
  const wp=GPRE[SG.pre]||GPRE.eq,pc=v=>Math.round(v*100)+"%",msg=ST.miss.filter(([k])=>!/^(—|-)$/.test(k)).slice(0,8);
- $("sgn").innerHTML=`<b>Como a nota é calculada (${wp[0]}):</b> ${pc(wp[1])} tempo de translado (até 1 h 30), ${pc(wp[2])} lotação da oficina agora (quantos veículos ela tem × quanto costuma ter) e ${pc(wp[3])} tempo que ela costuma levar para liberar (mediana dos últimos 60 dias, até 10 dias). Quanto maior a nota, melhor. Oficina sem registro de veículos não conta como vazia: entra com a lotação típica das outras. Oficinas especializadas pelo nome (motos, pneus, vidros, guindastes…) ficam no fim da lista, e oficina de motos só aparece para moto, até a coluna SERVIÇOS chegar na planilha de endereços.<br>`+
+ $("sgn").innerHTML=`<b>Como a nota é calculada (${wp[0]}):</b> ${pc(wp[1])} tempo de translado (até 1 h 30), ${pc(wp[2])} lotação da oficina agora (quantos veículos ela tem × quanto costuma ter) e ${pc(wp[3])} tempo que ela costuma levar para liberar (mediana dos últimos 60 dias, até 10 dias). Quanto maior a nota, melhor. Oficina sem registro de veículos não conta como vazia: entra com a lotação típica das outras.`+(GEO.P.some(p=>p._g&&p._g.has)?` <b>Serviços e tipos de veículo</b> (colunas da planilha de endereços): só entram oficinas que aceitam o tipo do veículo e fazem o serviço que ele precisa (pelo grupo de serviço da manutenção, ou o que você escolher em “Serviço”). Sem serviço definido, oficina que não faz mecânica nem elétrica (só funilaria, vidros, suspensão, adesivos…) perde 30 pontos. Quem faz só parte do serviço perde 12 pontos; especialista no serviço ganha 5; oficina especializada numa marca ganha 8 se o veículo é dessa marca e perde 15 se não é; serviços não informados perdem 8 a 10. Descredenciadas, quem só vende peças ou pneus e quem só faz garantia (a não ser que o serviço escolhido seja garantia) não entram.${sgXT()?" Agora ficaram de fora: "+sgXT()+".":""}`:" Oficinas especializadas pelo nome (motos, pneus, vidros, guindastes…) ficam no fim da lista, e oficina de motos só aparece para moto, até as colunas SERVIÇOS e TIPOS DE VEÍCULOS chegarem na planilha de endereços.")+`<br>`+
   `Tempo de translado ${T&&T.m?"pelo mapa de ruas do OpenStreetMap, sem trânsito; com trânsito, confira no Google Maps (↗)":T&&T.w?"sendo calculado pelo mapa de ruas…":"estimado pela distância (sem acesso agora ao serviço de rotas do OpenStreetMap); os marcados com * são estimativas"}. Partida: <b>${h(O.n)}</b>${O.a?" ("+h(O.a)+")":""}${SG.om=="custom"&&SG.ar&&SG.ar.length?" · endereço encontrado no OpenStreetMap":""}.<br>`+
-  `Lotação: ${ESX?`veículos de <b>todos os controladores</b> que estão na oficina pela planilha de translados de ${fm(ESX.T)} (os seus, pelo painel, ao vivo), comparados com quanto ela costuma ter por dia nos últimos 60 dias: <b class="sglot sgl-c">cheia</b> = no pico de costume ou acima, <b class="sglot sgl-m">movimentada</b> = acima do normal, <b class="sglot sgl-t">tranquila</b> = normal ou abaixo`:`só os veículos do seu painel. <b>Envie a planilha de translados</b> em Atualizar dados (quadro 🚚) para contar os veículos de todos os controladores e saber se a oficina está cheia`}; “—” = oficina sem registro.`+
+  `Lotação: ${ESX?`veículos de <b>todos os controladores</b> que estão na oficina pela planilha de translados de ${fm(ESX.T)} (os seus, pelo painel, ao vivo${ST.ol&&ST.ol.length?"; e os de "+h(ST.ol.join(", "))+", que já usam o painel, também ao vivo pelo painel deles":""}), comparados com quanto ela costuma ter por dia nos últimos 60 dias: <b class="sglot sgl-c">cheia</b> = no pico de costume ou acima, <b class="sglot sgl-m">movimentada</b> = acima do normal, <b class="sglot sgl-t">tranquila</b> = normal ou abaixo`:`só os veículos do seu painel. <b>Envie a planilha de translados</b> em Atualizar dados (quadro 🚚) para contar os veículos de todos os controladores e saber se a oficina está cheia`}; “—” = oficina sem registro.`+
   (SG.k=="of"&&ST.mov!=null?`<br>Serviço leve? A oficina móvel vai até o veículo, sem translado, e costuma liberar <b>${dd(ST.mov)}</b> (mediana).`:"")+(msg.length?`<br>Oficinas usadas nos últimos 60 dias que ainda não têm endereço na planilha: ${msg.map(([k,n])=>h(cap(k))+" ("+n+")").join(", ")}.`:"")}
-document.addEventListener("input",e=>{const id=e.target.id;if(id=="sgp"){clearTimeout(RENDERSUG.t);RENDERSUG.t=setTimeout(()=>{const v=nrm(e.target.value).replace(/[^A-Z0-9]/g,"");if(v===SG.p)return;SG.p=v;SG.om="";SG.sel=null;RENDERSUG()},350)}
+document.addEventListener("input",e=>{const id=e.target.id;if(id=="sgcp"){clearTimeout(sgChamado.t);const v=e.target.value;sgChamado.t=setTimeout(()=>sgChamado(v),250);return}if(id=="sgp"){clearTimeout(RENDERSUG.t);RENDERSUG.t=setTimeout(()=>{const v=nrm(e.target.value).replace(/[^A-Z0-9]/g,"");if(v===SG.p)return;SG.p=v;SG.om="";SG.sel=null;RENDERSUG()},350)}
  });
 document.addEventListener("keydown",e=>{if(e.target&&e.target.id=="sga"&&e.key=="Enter"){e.preventDefault();sgFind(e.target.value)}});
 document.addEventListener("change",e=>{const id=e.target.id,v=e.target.value;if(id=="sgo"){SG.om=v;SG.sel=null;RENDERSUG();if(v=="custom"&&!SG.o){const a=$("sga");if(a)a.focus()}}else if(id=="sgpr"){SG.pre=v;SG.sel=null;RENDERSUG()}else if(id=="sgk"){SG.k=v;SG.sel=null;RENDERSUG()}else if(id=="sgs"){SG.sv=v;SG.sel=null;RENDERSUG()}
  else if(id=="geof"){const f=e.target.files[0];e.target.value="";if(f)GEOUP(f)}});
 document.addEventListener("click",e=>{if(TAB!="sugoficina")return;const v=e.target.closest("[data-sgv]");if(v){SG.p=v.dataset.sgv;SG.om="";SG.sel=null;$("sgp").value=SG.p;RENDERSUG();return}
- const s=e.target.closest("[data-sgs]");if(s&&!e.target.closest("a")){SG.sel=s.dataset.sgs;RENDERSUG();return}if(e.target.closest("#sgab")){sgFind($("sga").value);return}const ai=e.target.closest("[data-sga]");if(ai&&SG.ar&&SG.ar[+ai.dataset.sga]){const x=SG.ar[+ai.dataset.sga];document.querySelectorAll("[data-sga]").forEach(b=>b.classList.toggle("on",b===ai));$("sgar").querySelector("b").textContent=x.n;sgSetO([x.la,x.lo],x.n)}});
+ const s=e.target.closest("[data-sgs]");if(s&&!e.target.closest("a")){SG.sel=s.dataset.sgs;RENDERSUG();return}if(e.target.closest("#sgab")){sgFind($("sga").value);return}if(e.target.closest("#sgcx")){$("sgcp").value="";sgChamado("");return}if(e.target.closest("#sgoca")){SG.oca=!SG.oca;RENDERSUG();return}const ai=e.target.closest("[data-sga]");if(ai&&SG.ar&&SG.ar[+ai.dataset.sga]){const x=SG.ar[+ai.dataset.sga];document.querySelectorAll("[data-sga]").forEach(b=>b.classList.toggle("on",b===ai));$("sgar").querySelector("b").textContent=x.n;sgSetO([x.la,x.lo],x.n)}});
 window.addEventListener("resize",()=>{if(TAB=="sugoficina"&&SG.map){clearTimeout(SG.rz);SG.rz=setTimeout(()=>SG.map.draw(),150)}});
 
 /* ===== Dashboards por página =====
@@ -2285,7 +2417,7 @@ async function dqImg(tab,btn){const box=document.querySelector("#dq_"+tab+" .dq-
 /* qualquer bloco da tela vira imagem PNG com cabeçalho grafite (título, data e contrato) */
 async function domImg(box,tt,pre,btn,rmSel){const o=btn?btn.textContent:"";if(btn){btn.disabled=true;btn.textContent="Gerando…"}
  try{const W=Math.ceil(box.getBoundingClientRect().width),pad=24,cl=box.cloneNode(true),sk=new Set(["transition","animation","cursor","pointer-events","caret-color","will-change"]);
-  const cp=(a,b)=>{if(a.nodeType!==1)return;const cs=getComputedStyle(a),hv=!(a instanceof SVGElement)&&a.children.length>0;let t="";for(let i=0;i<cs.length;i++){const k=cs[i];if(sk.has(k)||k.startsWith("transition")||k.startsWith("animation")||(hv&&(k=="height"||k=="block-size")))continue;t+=k+":"+cs.getPropertyValue(k)+";"}b.setAttribute("style",t);
+  const cp=(a,b)=>{if(a.nodeType!==1)return;const cs=getComputedStyle(a),hv=!(a instanceof SVGElement)&&a.children.length>0,ih=a.style&&a.style.height,kh=hv?(ih?ih:[...a.children].some(c=>c.style&&/%$/.test(c.style.height||""))?cs.height:""):"";let t="";for(let i=0;i<cs.length;i++){const k=cs[i];if(sk.has(k)||k.startsWith("transition")||k.startsWith("animation")||(hv&&(k=="height"||k=="block-size")))continue;t+=k+":"+cs.getPropertyValue(k)+";"}if(kh)t+="height:"+kh+";";b.setAttribute("style",t);
    if(a.tagName=="INPUT"||a.tagName=="SELECT"||a.tagName=="TEXTAREA")b.setAttribute("value",a.value);for(let i=0;i<a.children.length;i++)cp(a.children[i],b.children[i])};cp(box,cl);
   cl.querySelectorAll(rmSel||"[data-noimg]").forEach(e=>e.remove());cl.style.margin="0";cl.style.boxSizing="border-box";cl.style.width=W+"px";cl.style.maxWidth=W+"px";
   const T=TODAY(),ct=F=="TODOS"?"Todos os contratos":dqLbl(F);
@@ -3004,7 +3136,7 @@ function FMODEL(all){const T=TODAY(),endOf=o=>o.dc||o.z||"";
  return{E,epi,epS,es:ESI,Sv,SO,LO,lamG,DG,DO,PE,PEO,WP,MD,fO,B,exit,exit80,span,spMin,hs,ent,out,lam,mu}}
 function GFCAST(C,all,H){H=H||30;const T=TODAY(),M=FMODEL(all),Sv=M.Sv,epi=M.epi,eps=M.epS,cl=eps.filter(z=>z.c),cl0=cl.filter(z=>!z.L),Ds=(cl0.length>=3?cl0:cl).map(z=>z.T);
  const pOver=eps.length?Sv(CAR+1):null,exc=pOver?(()=>{let t=0;for(let k=CAR+1;k<=CAR+H;k++)t+=Sv(k);return t/Sv(CAR+1)})():null,meanT=eps.length?(()=>{let t=0;for(let k=1;k<=60;k++)t+=Sv(k);return t})():null,meanD=_mean(Ds);
- let gd=0,gcv=0,glv=0;epi.forEach(z=>{const o=z.o,v=val(o.p)/30,rs=!z.c&&RES[npl(o.p)];for(let k=Math.max(carP(o.p,o.b)+1,(z.L||0)+1);k<=z.T;k++){const d=isoAdd(o.b,k-1);if(d>T)break;gd++;const cov=rs?(!rs.i||d>=rs.i):(o.rv&&d>=o.rv&&(!o.rf||d<o.rf));if(cov)gcv++;else if(z.c)glv+=v}});
+ let gd=0,gcv=0,glv=0;epi.forEach(z=>{const o=z.o,v=val(o.p)/30,rs=!z.c&&RES[npl(o.p)];for(let k=Math.max(carP(o.p,o.b,o.sv)+1,(z.L||0)+1);k<=z.T;k++){const d=isoAdd(o.b,k-1);if(d>T)break;gd++;const cov=rs?(!rs.i||d>=rs.i):(o.rv&&d>=o.rv&&(!o.rf||d<o.rf));if(cov)gcv++;else if(z.c)glv+=v}});
  const cRate=gd?gcv/gd:null,covE=M.E.filter(o=>o.rv),lost=covE.filter(o=>o.rf&&(!(o.dc||o.z)||o.rf<(o.dc||o.z))).length,pLose=covE.length?lost/covE.length:null;
  const dlg=epi.filter(z=>z.c&&z.T>CAR&&!z.L),avgDlg=dlg.length?glv/dlg.length:null,diaAvg=_mean(C.filter(x=>x.m).map(x=>x.dia))||_mean(FL.map(x=>val(x.p)/30).filter(Boolean))||0;
  const pL80=pLose?Math.min(1,pLose*1.5):0,rows=C.filter(x=>x.n!=null).map(x=>{const q=M.exit(x.v,x.n),R8=M.exit80(x.v,x.n),pre=Math.max(0,(x.cr??CAR)-x.n),days=x.m?Math.max(0,Math.min(q.R,H)-pre):0,d8=x.m?Math.max(0,Math.min(R8,H)-pre):0,dp=x.m?Math.max(0,H-pre):0,v=days*x.dia;
@@ -3036,7 +3168,7 @@ async function FSAVE(){if(!FSL||!DB||ROLE!="controlador"||RO()||!D.length)return
  try{await DB.doc("privado/fcs").set({s:FSN})}catch(e){}}
 function glosaReal(A,B,flt,det){const T=TODAY(),E=Object.values(EP).filter(o=>!o.x&&o.b&&epOwn(o)&&(!flt||((F=="TODOS"||o.c==F)&&gfEp(o)))).sort((a,b)=>a.b<b.b?1:a.b>b.b?-1:0);let s=0;const R=det?{}:null;
  /* cada placa conta no máximo uma vez por dia: se houver dois registros abertos da mesma placa (SMV corrigida, placa redigitada), vale o mais recente */
- for(let d=A;d<=B&&d<=T;d=isoAdd(d,1)){const seen=new Set();E.forEach(o=>{const e=o.dc||o.z||"";if(!(o.b<=d&&(!e||(o.dc?d<=o.dc:d<e))))return;const k=npl(o.p);if(seen.has(k))return;seen.add(k);if(isoDiff(o.b,d)+1<=carP(o.p,o.b))return;const v=val(o.p)/30;if(!v)return;const rs=!e&&RES[k];
+ for(let d=A;d<=B&&d<=T;d=isoAdd(d,1)){const seen=new Set();E.forEach(o=>{const e=o.dc||o.z||"";if(!(o.b<=d&&(!e||(o.dc?d<=o.dc:d<e))))return;const k=npl(o.p);if(seen.has(k))return;seen.add(k);if(isoDiff(o.b,d)+1<=carP(o.p,o.b,o.sv))return;const v=val(o.p)/30;if(!v)return;const rs=!e&&RES[k];
   if(!(rs?(!rs.i||d>=rs.i):(o.rv&&d>=o.rv&&(!o.rf||d<o.rf)))){s+=v;if(R){const q=R[k]=R[k]||{p:o.p,n:0,v:0,a:d,b:d,ep:o};q.n++;q.v+=v;q.b=d}}})}return det?{s,R}:s}
 function FBIAS(){const T=TODAY(),key=Object.keys(FSN).length+"|"+Object.keys(EP).length+"|"+T+"|"+FL.length+"|"+(ESX?ESX.u:0);if(FBIAS.c&&FBIAS.k===key)return FBIAS.c;const FS={};const need=fneed();Object.keys(FSN).forEach(d=>{if((FSN[d].mv||1)>=need)FS[d]=FSN[d]});
  const byP={};Object.values(EP).forEach(o=>{if(!o.x&&o.b&&o.dc&&epOwn(o))(byP[o.p]=byP[o.p]||[]).push(o)}),seen=new Set(),err=[];
@@ -3165,7 +3297,7 @@ OFR=Object.entries(g).map(([k,o])=>{const at=avg(o.tot),cp=o.pv?o.ok/o.pv:null,i
 return{k,o,at,cp,ix,cm,dg:avg(o.Dg.map(z=>z.d)),ex:avg(o.Ex.map(z=>z.d)),esp:o.nc?o.se/o.nc:null,dD:avg(o.D),dA:avg(o.A),dM:avg(o.M),s:Math.max(0,Math.round(s)),dd:[["Não cumpriu a previsão de devolução",cp!=null?(1-cp)*40:0,40],["Demorou mais que o esperado para a complexidade",ix!=null&&ix>1?Math.min(30,(ix-1)*40):0,30],["Veículos que voltaram de etapa",Math.min(20,o.ret/o.n*10),20],["Reprovação em ensaio",Math.min(10,o.R/o.n*10),10]]}}).sort((a,b)=>b.s-a.s||(b.cm||0)-(a.cm||0)||b.o.n-a.o.n);
 {const T=TODAY(),A=isoAdd(T,-180),EE=Object.values(EP).filter(o=>!o.x&&o.b&&epOwn(o)&&(F=="TODOS"||o.c==F)&&gfEp(o)),del=EE.filter(o=>o.dc&&o.dc>=A&&o.dc<=T),oT=o=>ofT(o.en,o.orc,o.ap,o.pr,o.dc,o.dc),medT=_med(del.map(oT).filter(x=>x!=null))||1;
  const byP={};EE.forEach(o=>{(byP[o.p]=byP[o.p]||[]).push(o)});Object.values(byP).forEach(l=>l.sort((a,b)=>a.b.localeCompare(b.b)));
- const glOf=o=>{let g=0;const v=val(o.p)/30;for(let k=carP(o.p,o.b)+1;k<=isoDiff(o.b,o.dc);k++){const d=isoAdd(o.b,k-1);if(!(o.rv&&d>=o.rv&&(!o.rf||d<o.rf)))g+=v}return g};
+ const glOf=o=>{let g=0;const v=val(o.p)/30;for(let k=carP(o.p,o.b,o.sv)+1;k<=isoDiff(o.b,o.dc);k++){const d=isoAdd(o.b,k-1);if(!(o.rv&&d>=o.rv&&(!o.rf||d<o.rf)))g+=v}return g};
  const HQ={};del.forEach(o=>{const k=o.o||"—",q=HQ[k]=HQ[k]||{n:0,pv:0,ok:0,late:[],T:[],E:[],gl:0,re:0,ad:0,ant:0};{const cl=pcL(o);q.ad+=cl.filter(c=>c.n>0).length;if(o.pv&&o.dc<o.pv)q.ant++}const t=oT(o);q.n++;if(t!=null){q.T.push(t);q.E.push(o.lv&&BASE[+o.lv]?BASE[+o.lv]:medT)}if(o.pv){q.pv++;const dd=isoDiff(o.pv,o.dc);if(dd<=0)q.ok++;else q.late.push(dd)}q.gl+=glOf(o);const l=byP[o.p],nx=l[l.indexOf(o)+1];if(nx&&isoDiff(o.dc,nx.b)>=0&&isoDiff(o.dc,nx.b)<=30)q.re++});
  const gAvg=del.length?Object.values(HQ).reduce((s,q)=>s+q.gl,0)/del.length:0;
  OFH=Object.entries(HQ).map(([k,q])=>{const cp=q.pv?q.ok/q.pv:null,al=q.late.length?_mean(q.late):0,ix=q.T.length?q.T.reduce((s,x)=>s+x,0)/Math.max(1,q.E.reduce((s,x)=>s+x,0)):null,gv=q.gl/q.n,rr=q.re/q.n;let sc=100;if(cp!=null)sc-=(1-cp)*30;sc-=Math.min(15,al*1.5);sc-=Math.min(10,q.ad/q.n*5);if(ix!=null&&ix>1)sc-=Math.min(20,(ix-1)*40);if(gAvg>0)sc-=Math.min(10,Math.max(0,gv/gAvg-1)*10);sc-=Math.min(15,rr*50);
@@ -3861,12 +3993,19 @@ try{LAU=JSON.parse(localStorage.getItem("pm_laudos")||"[]")}catch(e){}
 let LMAP=null,LQ="",LT="",LPG=1,LCI=[];
 const pk=r=>Object.keys(r).find(k=>k.toUpperCase().includes("PLACA"));
 const LORD=["ELETR","ACUST","TACOG"],LLAB=["Elétrico","Acústico","Tacógrafo"];
-function lwide(wb){const out=[];wb.SheetNames.forEach(n=>{const R=XLSX.utils.sheet_to_json(wb.Sheets[n],{defval:"",raw:true});if(!R.length)return;const K=[...new Set(R.flatMap(r=>Object.keys(r)))],N=k=>nrm(k).trim(),fk=re=>K.find(k=>re.test(N(k)))||"";
-const T=[["Elétrico",fk(/^DTA TESTE ELETR/),fk(/^FORNECEDOR ELE/),fk(/LINK.*ELETR/)],["Acústico",fk(/^DTA TESTE ACUST/),fk(/^FORNECEDOR ACUS/),fk(/LINK.*ACUST/)],["Tacógrafo",fk(/^DTA AFERI/),fk(/^FORNECEDOR TAC/),fk(/LINK.*TAC/)]];
-if(!T[0][1]&&!T[1][1]&&!T[1][3])return;const pc=K.find(k=>N(k)=="PLACA")||fk(/PLACA/);
-R.forEach(r=>{const p=String(r[pc]||"").trim().toUpperCase();if(!p)return;T.forEach(([t,d,f,l])=>{if(!d&&!l)return;let dv=d?r[d]:"";const lv=l?String(r[l]||"").trim():"";if(dv instanceof Date)dv=dv.toISOString().slice(0,10);dv=String(dv??"").trim();if(/NAPLIC|N\/A|^-$/i.test(dv))dv="";if(typeof r[d]=="number")dv=String(Math.floor(r[d]));if(!dv&&!lv)return;out.push({PLACA:p,TIPO:t,FORNECEDOR:f?String(r[f]||"").trim():"",DATA:dv,LINK:lv})})})});return out}
+function lwide(wb){const out=[];wb.SheetNames.forEach(n=>lwideRows(XLSX.utils.sheet_to_json(wb.Sheets[n],{defval:"",raw:true}),out));return out}
+function lwideRows(R,out){out=out||[];(()=>{if(!R.length)return;const K=[...new Set(R.flatMap(r=>Object.keys(r)))],N=k=>nrm(k).trim(),fk=re=>K.find(k=>re.test(N(k)))||"";
+/* colunas por tipo de ensaio, aceitando nomes diferentes (DTA/DATA, ELÉTRICO/ACÚSTICO/TACÓGRAFO ou AFERIÇÃO, LINK/URL ou coluna com http); vencimento/validade ficam de fora */
+const bad=/VENC|VALID|PROX|VIGEN|STATUS|SITUA/,TW=[["Elétrico",/ELETR/],["Acústico",/ACUST/],["Tacógrafo",/TACOG|AFERI/]],T=TW.map(([t,re])=>{const hk=K.filter(k=>re.test(N(k))&&!bad.test(N(k))),http=k=>R.some(r=>/^https?:/i.test(String(r[k]||"").trim()));
+ const l=hk.find(http)||hk.find(k=>/LINK|URL/.test(N(k)))||"",f=hk.find(k=>/FORNEC|EMPRESA|LABORAT|PRESTADOR/.test(N(k)))||"",d=hk.find(k=>k!==l&&k!==f&&/^(DTA|DATA|DT)\b/.test(N(k)))||hk.find(k=>k!==l&&k!==f&&/REALIZ|AFERI|EMISS|TESTE|ENSAIO/.test(N(k)))||"";return[t,d,f,l]});
+if(!T.some(x=>x[1]||x[3]))return;const pc=K.find(k=>N(k)=="PLACA")||fk(/PLACA/);
+R.forEach(r=>{const p=String(r[pc]||"").trim().toUpperCase();if(!p)return;T.forEach(([t,d,f,l])=>{if(!d&&!l)return;let dv=d?r[d]:"";const lv=l?String(r[l]||"").trim():"";if(dv instanceof Date)dv=dv.toISOString().slice(0,10);dv=String(dv??"").trim();if(/NAPLIC|N\/A|^-$/i.test(dv))dv="";if(typeof r[d]=="number")dv=String(Math.floor(r[d]));if(!dv&&!lv)return;out.push({PLACA:p,TIPO:t,FORNECEDOR:f?String(r[f]||"").trim():"",DATA:dv,LINK:lv})})})})();return out}
 function lkeys(){return[...new Set(LAU.flatMap(r=>Object.keys(r)))]}
-function lmap(){if(LMAP&&LMAP.p)return LMAP;const ks=lkeys(),N=k=>nrm(k),f=re=>ks.find(k=>re.test(N(k)))||"";
+let LMC={k:""};
+function lmap(){const sig=LAU.length+"|"+JSON.stringify(LMAP||{});if(LMC.k===sig)return LMC.m;const m=lmap0(),ks=lkeys(),isT=v=>/ELETR|ACUST|TACOG/.test(nrm(String(v||""))),cnt=k=>k?LAU.reduce((s,r)=>s+(isT(r[k])?1:0),0):0;
+ if(!(LMAP&&LMAP.tu)){let bt="",bn=0;ks.forEach(k=>{const n=cnt(k);if(n>bn){bn=n;bt=k}});if(bt&&bn>cnt(m.t))m.t=bt}
+ LMC={k:sig,m};return m}
+function lmap0(){if(LMAP&&LMAP.p)return Object.assign({},LMAP);const ks=lkeys(),N=k=>nrm(k),f=re=>ks.find(k=>re.test(N(k)))||"";
 const l=ks.find(k=>LAU.some(r=>/^https?:/i.test(String(r[k]||"").trim())))||f(/LINK|URL|LAUDO/);
 return{p:f(/PLACA/),t:f(/TIPO/)||ks.find(k=>/ENSAIO|CATEGORIA/.test(N(k))&&!/DATA|VENC|VALID/.test(N(k)))||"",f:f(/FORNEC|EMPRESA|LABORAT|LOCAL/),d:ks.find(k=>/DATA|REALIZ|EMISS/.test(N(k))&&!/VENC|VALID/.test(N(k)))||"",l}}
 function ldate(v){v=String(v==null?"":v).trim();let m=v.match(/^(\d{4})-(\d{2})-(\d{2})/);if(m)return m[3]+"/"+m[2]+"/"+m[1];if(/^\d{5}$/.test(v)){const d=new Date(Math.round((+v-25569)*864e5));return String(d.getUTCDate()).padStart(2,"0")+"/"+String(d.getUTCMonth()+1).padStart(2,"0")+"/"+d.getUTCFullYear()}return v}
@@ -3879,7 +4018,7 @@ async function SAVELP(){if(!DB||ROLE!="controlador")return;try{await DB.doc("lau
 const ldkey=d=>String(d||"").split("/").reverse().join("");
 document.addEventListener("click",e=>{const b=e.target.closest("[data-lty]");if(!b)return;LTY=b.dataset.lty===""?"":+b.dataset.lty;LT="";LPG=1;RENDERP()});
 let LTY="";const TYI=["⚡","🔊","⏱"];
-function RENDERP(){if(TAB!="ensaios"||!$("lcs"))return;
+function RENDERP(){if(TAB!="ensaios"||!$("lcs"))return;if(LAU.length&&!LAU.some(r=>/ELETR|ACUST|TACOG/.test(nrm(String(r.TIPO||r.Tipo||"")))||Object.values(r).some(v=>/^(ENSAIO )?(ELETRICO|ACUSTICO|TACOGRAFO)$/.test(nrm(String(v||"")).trim())))){const w=lwideRows(LAU);if(w.length){LAU=w;LMAP=null;LMC.k=""}}
 const all=lcards(),q=LQ.toLowerCase(),H=new Map();LPS.forEach(x=>H.set(x.p,x.o||""));
 const by={};all.forEach(x=>{const k=lrank(x.t)<3?lrank(x.t):"x:"+nrm(x.t);const o=by[x.p]=by[x.p]||{};(o[k]=o[k]||[]).push(x)});
 Object.values(by).forEach(o=>Object.values(o).forEach(a=>a.sort((u,v)=>ldkey(v.d).localeCompare(ldkey(u.d)))));
@@ -3905,7 +4044,7 @@ const d=e.target.closest("[data-ldel]");if(d&&ROLE=="controlador"){if(!d.dataset
 if(e.target.closest("#laa")&&ROLE=="controlador"){const p=$("lap").value.trim().toUpperCase(),l=$("lal").value.trim();if(!p){$("ls").textContent="Informe a placa.";return}
 let m=lmap();if(!m.p){m={p:"PLACA",t:"TIPO",f:"FORNECEDOR",d:"DATA",l:"LINK"};LMAP=m;SAVEMAP()}
 const r={};r[m.p]=p;if(m.t)r[m.t]=$("lat").value;if(m.f)r[m.f]=$("laf").value.trim();if(m.d)r[m.d]=$("lad").value;if(m.l)r[m.l]=l;LAU.push(r);try{localStorage.setItem("pm_laudos",JSON.stringify(LAU))}catch(x){}SAVEL();["lap","laf","lal"].forEach(i=>$(i).value="");$("ls").style.color="var(--c)";$("ls").textContent="Laudo adicionado.";RENDERP()}});
-document.addEventListener("change",e=>{const s=e.target.dataset&&e.target.dataset.lm;if(!s||ROLE!="controlador")return;const m=Object.assign({},lmap());m[s]=e.target.value;LMAP=m;SAVEMAP();RENDERP()});
+document.addEventListener("change",e=>{const s=e.target.dataset&&e.target.dataset.lm;if(!s||ROLE!="controlador")return;const m=Object.assign({},lmap());m[s]=e.target.value;if(s=="t")m.tu=1;LMAP=m;SAVEMAP();RENDERP()});
 function RENDERE(){document.querySelectorAll("[data-ef]:not(#est *)").forEach(b=>b.classList.toggle("on",b.dataset.ef==EF));const a=EF=="TODOS"?ENT:ENT.filter(v=>v.c==EF);
 if(!DE){const ds=ENT.map(v=>v.dc).filter(Boolean).sort();DE=ds.length?ds[ds.length-1]:new Date(Date.now()-new Date().getTimezoneOffset()*6e4).toISOString().slice(0,10)}
 $("de").value=DE;const l=a.filter(v=>v.dc==DE);

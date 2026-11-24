@@ -4,7 +4,7 @@
    para a demonstração sempre parecer atual. Nada aqui vem da operação real. */
 (function(){
 "use strict";
-var VER="demo-4",KEEP={pm_theme:1};
+var VER="demo-5",KEEP={pm_theme:1};
 var LSO=null;try{LSO=window.localStorage}catch(e){}
 function wipe(){if(!LSO)return;Object.keys(LSO).forEach(function(k){if(k.indexOf("pmdb:")===0||(k.indexOf("pm_")===0&&!KEEP[k]))LSO.removeItem(k)})}
 window.PMDEMO_RESET=function(){try{wipe()}catch(e){}location.reload()};
@@ -149,6 +149,7 @@ var GEO={v:1,u:Date.now(),by:"demonstração",fn:"enderecos-demo.xlsx",P:[]};
 function gp(id,n,a,la,lo,k,c,s,v){GEO.P.push({id:id,n:n,a:a,la:la,lo:lo,k:k,c:c||"",s:s||"",v:v||""})}
 [["BASE CENTRAL",-22.9128,-43.2318],["BASE PORTO",-22.8988,-43.2215],["BASE JARDIM",-22.8405,-43.2752],["BASE ESTAÇÃO",-22.9012,-43.2801],["BASE LAGOA",-22.8796,-43.4302],["BASE MORRO ALTO",-22.8752,-43.4651],["BASE RIO NOVO",-22.7641,-43.3994],["BASE VILA NOVA",-22.8073,-43.4138],["BASE SERRA",-22.4695,-44.4468],["BASE VALE VERDE",-22.5446,-44.1712]].forEach(function(b,i){gp("BASE "+(i+1),b[0],"Endereço fictício",b[1],b[2],"ba",i==0||i==4?"ALFA CONECTA":"ALFA")});
 [["AUTO CENTER NOVA ERA",-22.8661,-43.2552,"MECÂNICA, ELÉTRICA","LEVES"],["MECÂNICA RODA VIVA",-22.8402,-43.3727,"MECÂNICA, PREVENTIVA","LEVES"],["OFICINA SÃO JORGE",-22.7833,-43.4301,"MECÂNICA, BORRACHARIA","LEVES"],["FUNILARIA BOA VISTA",-22.8806,-43.2961,"FUNILARIA, PINTURA","LEVES"],["ELÉTRICA FAÍSCA",-22.9151,-43.2452,"ELÉTRICA","LEVES E PESADOS"],["DIESEL FORTE",-22.8072,-43.3602,"MECÂNICA PESADA","PESADOS"],["HIDRÁULICA PRIME",-22.8551,-43.3205,"HIDRÁULICA, CESTO","PESADOS"],["TRUCK SERVICE CENTRAL",-22.9203,-43.6298,"MECÂNICA PESADA, HIDRÁULICA","PESADOS"]].forEach(function(o,i){gp("OFICINA "+(i+1),o[0],"Endereço fictício",o[1],o[2],"of","",o[3],o[4])});
+[["CENTRO AUTOMOTIVO UNIÃO",-22.8243,-43.3049,"TODOS OS SERVIÇOS","TODOS OS VEÍCULOS"],["SUSPENSÕES ALFA",-22.8612,-43.3511,"SÓ SUSPENSÃO","LEVES - PICAPES LEVES E MÉDIAS - SUPERVISÃO"],["VIDRAÇARIA CRISTAL",-22.8930,-43.2850,"VIDROS","TODOS OS VEÍCULOS"],["OFICINA PONTE VELHA",-22.8150,-43.3900,"DESCREDENCIADA","DESCREDENCIADA"]].forEach(function(o,i){gp("OFICINA "+(9+i),o[0],"Endereço fictício",o[1],o[2],"of","",o[3],o[4])});
 gp("ENSAIO 1","LABTEC","Endereço fictício",-22.8921,-43.2371,"en","","ENSAIO ACÚSTICO, ELÉTRICO E TACÓGRAFO","PESADOS");
 gp("LOCADORA 1","GARAGEM DA LOCADORA","Endereço fictício",-22.8322,-43.3251,"lo");
 
