@@ -4,7 +4,7 @@
    para a demonstração sempre parecer atual. Nada aqui vem da operação real. */
 (function(){
 "use strict";
-var VER="demo-5",KEEP={pm_theme:1};
+var VER="demo-6",KEEP={pm_theme:1};
 var LSO=null;try{LSO=window.localStorage}catch(e){}
 function wipe(){if(!LSO)return;Object.keys(LSO).forEach(function(k){if(k.indexOf("pmdb:")===0||(k.indexOf("pm_")===0&&!KEEP[k]))LSO.removeItem(k)})}
 window.PMDEMO_RESET=function(){try{wipe()}catch(e){}location.reload()};
@@ -29,7 +29,7 @@ function round2(x){return Math.round(x*100)/100}
 /* ---------- frota fictícia ---------- */
 var L="ABCDEFGHIJKLMNOPQRSTUVWXYZ",usedP={},usedO={};
 function placa(){for(;;){var p=pick("QRSTU")+L[ri(0,25)]+L[ri(0,25)]+ri(0,9)+L[ri(0,9)]+ri(0,9)+ri(0,9);if(!usedP[p]){usedP[p]=1;return p}}}
-function ordem(con){for(;;){var o=(con?"A":"")+String(ri(10000,99999));if(!usedO[o]){usedO[o]=1;return o}}}
+function ordem(con){for(;;){var o=(con?"P":"")+String(ri(10000,99999));if(!usedO[o]){usedO[o]=1;return o}}}
 var TIPOS=[
  {t:"PICAPE LEVE",k:"LEVES",m:["FIORINO","STRADA","SAVEIRO"],v:[3150,3720],w:150,con:true},
  {t:"SUPERVISÃO",k:"LEVES",m:["MOBI","CRONOS","ARGO"],v:[2080,2590],w:92,con:true},
@@ -41,11 +41,11 @@ var TIPOS=[
  {t:"CATAGALHO",k:"PESADOS",m:["14.190 ROBUST"],v:[9100,10400],w:8},
  {t:"ESPECIAL",k:"PESADOS",m:["24.280 CONSTELLATION"],v:[12100,13900],w:8}];
 var AREAS=[
- {a:"CENTRO",r:"RJ",c:"ANDRÉ",b:["BASE CENTRAL","BASE PORTO"],w:24},
- {a:"ZONA NORTE",r:"RJ",c:"BEATRIZ",b:["BASE JARDIM","BASE ESTAÇÃO"],w:23},
- {a:"ZONA OESTE",r:"RJ",c:"CAIO",b:["BASE LAGOA","BASE MORRO ALTO"],w:19},
- {a:"BAIXADA",r:"RJ",c:"DÉBORA",b:["BASE RIO NOVO","BASE VILA NOVA"],w:18},
- {a:"VALE",r:"VALE",c:"EDUARDO",b:["BASE SERRA","BASE VALE VERDE"],w:16}];
+ {a:"CURITIBA CENTRO",r:"PR",c:"ANDRÉ",b:["BASE CENTRAL","BASE PRAÇA"],w:24},
+ {a:"CURITIBA NORTE",r:"PR",c:"BEATRIZ",b:["BASE JARDIM","BASE ESTAÇÃO"],w:23},
+ {a:"CURITIBA SUL",r:"PR",c:"CAIO",b:["BASE LAGOA","BASE MORRO ALTO"],w:19},
+ {a:"REGIÃO METROPOLITANA",r:"PR",c:"DÉBORA",b:["BASE PINHAIS","BASE VILA NOVA"],w:18},
+ {a:"JOINVILLE",r:"SC",c:"EDUARDO",b:["BASE BOM RETIRO","BASE PIRABEIRABA"],w:16}];
 var FL=[],VAL={};
 /* descrição, ano, chassi e implemento: gerador separado, para não mudar o resto dos dados */
 var s1=7340021;function r1(){s1|=0;s1=s1+0x6D2B79F5|0;var t=Math.imul(s1^s1>>>15,1|s1);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}
@@ -54,7 +54,7 @@ var DESC={"PICAPE LEVE":["SUPORTE DE ESCADA | GIROFLEX | SONORIZADOR DE RÉ","CA
 var IMPL={"CESTO SIMPLES":["CESTO 10M","CESTO 12M"],"CESTO DUPLO":["CESTO DUPLO 13M","CESTO DUPLO 15M"],"CATAGALHO":["CAÇAMBA BASCULANTE"],"ESPECIAL":["GUINDAUTO"],"PICAPE LEVE":["CAPOTA"],"FURGÃO":["BAÚ DE FERRAMENTAS"]};
 function chassi(){var c="ABCDEFGHJKLMNPRSTUVWXYZ0123456789",x="9XX";for(var i=0;i<14;i++)x+=c[Math.floor(r1()*c.length)];return x}
 function mkx(v,tp){var y=2023+Math.floor(r1()*3);v.md=v.m+" ("+p1(DESC[tp.t]||["COMPLETO"])+")";v.an=y+"/"+(y+(r1()<0.7?1:0));if(r1()<0.85)v.ch=chassi();if(IMPL[tp.t]&&r1()<(tp.k=="PESADOS"?0.9:0.35))v.im=p1(IMPL[tp.t]);return v}
-function mkv(tp,ar,res){var con=!res&&tp.con&&rnd()<0.31,v={p:placa(),o:ordem(con),c:res?"FERNANDA":ar.c,a:res?(ar.r=="VALE"?"RESERVA VALE":"RESERVA RJ"):ar.a,b:res?(ar.r=="VALE"?"RESERVA VALE":"RESERVA RJ"):pick(ar.b),s:res?"RESERVA":"EFETIVO",k:tp.k,t:tp.t,m:pick(tp.m),g:con?"ALFA CONECTA":"ALFA",r:ar.r,v:res?0:round2(ri(tp.v[0]*100,tp.v[1]*100)/100)};if(!res)VAL[v.p]=v.v;return mkx(v,tp)}
+function mkv(tp,ar,res){var con=!res&&tp.con&&rnd()<0.31,v={p:placa(),o:ordem(con),c:res?"FERNANDA":ar.c,a:res?(ar.r=="SC"?"RESERVA JOINVILLE":"RESERVA CURITIBA"):ar.a,b:res?(ar.r=="SC"?"RESERVA JOINVILLE":"RESERVA CURITIBA"):pick(ar.b),s:res?"RESERVA":"EFETIVO",k:tp.k,t:tp.t,m:pick(tp.m),g:con?"PRISMA":"HORIZONTE",r:ar.r,v:res?0:round2(ri(tp.v[0]*100,tp.v[1]*100)/100)};if(!res)VAL[v.p]=v.v;return mkx(v,tp)}
 var TW=TIPOS.map(function(t){return[t,t.w]}),AW=AREAS.map(function(a){return[a,a.w]});
 for(var i=0;i<446;i++)FL.push(mkv(wpick(TW),wpick(AW),false));
 for(i=0;i<30;i++)FL.push(mkv(wpick(TW.filter(function(x){return x[0].k=="LEVES"||rnd()<0.5})),wpick(AW),true));
@@ -94,32 +94,32 @@ function row(v,o){
  var wait=o.stage>=5?0:ri(0,o.stage==0?1:o.stage==1?3:o.stage==2?4:o.stage==3?(peca?10:7):3);
  var start=o.start!=null?o.start:-(need+wait);
  var d=[day(start)];for(k=0;k<5;k++)d.push(new Date(d[k].getTime()+g[k]*864e5));
- /* d: 0 direcionado/SMV · 1 entrada · 2 orçamento · 3 aprovação · 4 pronto na oficina · 5 pronto (após ensaio) · conclusão = 5 + g[5] */
- var con=v.g=="ALFA CONECTA",concl=new Date(d[5].getTime()+g[5]*864e5),ef=ensFields(v),pl=v.p;
+ /* d: 0 direcionado/protocolo · 1 entrada · 2 orçamento · 3 aprovação · 4 pronto na oficina · 5 pronto (após ensaio) · conclusão = 5 + g[5] */
+ var con=v.g=="PRISMA",concl=new Date(d[5].getTime()+g[5]*864e5),ef=ensFields(v),pl=v.p;
  var ob=[],lastH="",add=function(dt,lines){var h=ddmm(dt);if(h===lastH)ob.pop();else ob.push(h);lastH=h;lines.forEach(function(l){ob.push(l.charAt(0)=="°"?l:"- "+l)});ob.push("")};
- add(d[0],["DIRECIONADO PARA "+of+" Código gerado: "+code("RET",pl)]);
+ add(d[0],["DIRECIONADO PARA "+of+" Código gerado: "+code("TR",pl)]);
  if(o.stage>=1)add(d[1],["ENTRADA NA OFICINA"]);
  if(o.stage>=2)add(d[2],["ORÇAMENTO ENVIADO PARA APROVACAO"]);
  var sv=servs(gs);
  if(o.stage>=3){add(d[3],["ORÇAMENTO APROVADO","SERVICOS DE"].concat(sv.map(function(s){return"° "+s})).map(function(l){return l}));if(peca){var pc=pick(PECA[gs[0]]||["PEÇA DE REPOSIÇÃO"]),dp=new Date(d[3].getTime()+864e5);if(dp<=T0)add(dp,["AGUARDANDO PEÇA ("+pc+")"])}}
  if(o.stage>=4){
-  if(ens){add(d[4],["PRONTO PARA ENTREGA NA OFICINA","DIRECIONADO PARA LABTEC PARA ENSAIO ACUSTICO Código gerado: "+code("TIT",pl)]);
+  if(ens){add(d[4],["PRONTO PARA ENTREGA NA OFICINA","DIRECIONADO PARA LABTEC PARA ENSAIO ACUSTICO Código gerado: "+code("TR",pl)]);
    var de=new Date(d[4].getTime()+ri(1,2)*864e5);
-   if(rep&&de<d[5]){add(de,["REPROVADO NO ACUSTICO NA LABTEC","DIRECIONADO PARA "+of+" PARA FAZER REPAROS Código gerado: "+code("TIT",pl)]);var dr=new Date(de.getTime()+ri(1,2)*864e5);if(dr<d[5])add(dr,["REPAROS DO ACUSTICO CONCLUIDOS","DIRECIONADO PARA LABTEC PARA REFAZER ENSAIO ACUSTICO Código gerado: "+code("TIT",pl)])}
+   if(rep&&de<d[5]){add(de,["REPROVADO NO ACUSTICO NA LABTEC","DIRECIONADO PARA "+of+" PARA FAZER REPAROS Código gerado: "+code("TR",pl)]);var dr=new Date(de.getTime()+ri(1,2)*864e5);if(dr<d[5])add(dr,["REPAROS DO ACUSTICO CONCLUIDOS","DIRECIONADO PARA LABTEC PARA REFAZER ENSAIO ACUSTICO Código gerado: "+code("TR",pl)])}
    if(d[5]<=T0)add(d[5],["APROVADO NA LABTEC","PRONTO PARA ENTREGA NA LABTEC"])}
   else add(d[4],["PRONTO PARA ENTREGA NA OFICINA"])}
- if(o.stage>=5)add(concl,["VEÍCULO ENTREGUE NA "+v.b+" Código gerado: "+code("DEV",pl)]);
- if(o.cancel)add(T0,["CLIENTE PEDIU CANCELAMENTO DA SMV (VEÍCULO SEGUE RODANDO)"]);
+ if(o.stage>=5)add(concl,["VEÍCULO ENTREGUE NA "+v.b+" Código gerado: "+code("TR",pl)]);
+ if(o.cancel)add(T0,["CLIENTE PEDIU CANCELAMENTO DO PROTOCOLO (VEÍCULO SEGUE RODANDO)"]);
  var pv="";if(o.stage>=3){var pvd=new Date(d[3].getTime()+Math.round((ri(3,8)+(peca?4:0))*sp)*864e5);pv=iso(pvd)}else if(o.stage==2&&rnd()<0.5)pv=iso(new Date(d[2].getTime()+ri(4,9)*864e5));
  if(o.stage>=4)pv=iso(new Date(d[5].getTime()+ri(0,2)*864e5));
- var r={"TEM1":"","TEM":"","CT":"EFETIVO","CATEGORIA":v.k=="PESADOS"?"PESADO":"LEVE","STATUS":"","RESERVA":"","CONDIÇÃO SAP":"",
-  "STATUS ENSAIO":ef.st,"ENSAIO ELÉTRICO2":ef.e,"ENSAIO ACÚSTICO":ef.a,"ENSAIO TACÓGRAFO":ef.t,"ATD":"","SMV":String(seqS+=ri(7,90)),
+ var r={"TEM1":"","TEM":"","CT":"EFETIVO","CATEGORIA":v.k=="PESADOS"?"PESADO":"LEVE","STATUS":"","RESERVA":"","CONDIÇÃO ERP":"",
+  "STATUS ENSAIO":ef.st,"ENSAIO ELÉTRICO2":ef.e,"ENSAIO ACÚSTICO":ef.a,"ENSAIO TACÓGRAFO":ef.t,"ATD":"","PROTOCOLO":String(seqS+=ri(7,90)),
   "PLACA":pl,"MODELO":v.m,"ORDEM":v.o,"ORIGEM":v.b,"DESTINO":of,"USUÁRIO":pick(USU),"TELEFONE":"(00) 90000-"+p2(ri(10,99))+p2(ri(10,99)),
   "SOLICITAÇÃO DO USUÁRIO":gs.map(function(x,i){return(i+1)+". "+GR[x].q}).join("\n")+(ens?"\nATIVIDADES PARA REALIZAR DURANTE A PARADA:\n• ENSAIO ACÚSTICO":""),
   "GRUPO DE SERVIÇO2":gs.join("-"),"OBSERVAÇOES":ob.join("\n").trim(),"STATUS REPORT":"","STATUS 1":"",
-  "DATA SMV":iso(d[0]),"DT ENTRADA OFICINA":o.stage>=1?iso(d[1]):"","DT ORÇAMENTO":o.stage>=2?iso(d[2]):"","DT APROVAÇÃO":o.stage>=3?iso(d[3]):"",
+  "DATA PROTOCOLO":iso(d[0]),"DT ENTRADA OFICINA":o.stage>=1?iso(d[1]):"","DT ORÇAMENTO":o.stage>=2?iso(d[2]):"","DT APROVAÇÃO":o.stage>=3?iso(d[3]):"",
   "PREVISÃO PEÇAS":peca&&o.stage==3?iso(day(ri(2,6))):"","DT PRONTO":o.stage>=4?iso(d[5]):"","PREVISÃO DEVOLUÇÃO":pv,"DATA CONCLUSÃO":o.stage>=5?iso(concl):"",
-  "AG. PEÇA?":!!(peca&&o.stage==3),"AG. VALIDAÇÃO?":!!o.valid,"CANCELAR?":!!o.cancel,"APROVADOR":o.stage>=3?pick(["GESTOR ALFA 1","GESTOR ALFA 2","GESTOR ALFA 3"]):"","ALÇADA":o.stage>=3?pick(["ATÉ R$ 5 MIL","ATÉ R$ 15 MIL","ACIMA DE R$ 15 MIL"]):"","ORDEM DE SERVIÇO":"","_c":v.g};
+  "AG. PEÇA?":!!(peca&&o.stage==3),"AG. VALIDAÇÃO?":!!o.valid,"CANCELAR?":!!o.cancel,"APROVADOR":o.stage>=3?pick(["GESTOR HORIZONTE 1","GESTOR HORIZONTE 2","GESTOR PRISMA"]):"","ALÇADA":o.stage>=3?pick(["ATÉ R$ 5 MIL","ATÉ R$ 15 MIL","ACIMA DE R$ 15 MIL"]):"","ORDEM DE SERVIÇO":"","_c":v.g};
  if(o.rt)r["SOLICITAÇÃO DO USUÁRIO"]="RETRABALHO: "+r["SOLICITAÇÃO DO USUÁRIO"];
  r._end=o.stage>=5?concl:null;return r}
 
@@ -133,12 +133,12 @@ function mark(p,a,b){(IV[p]=IV[p]||[]).push([a,b])}
 while(hist<165&&guard++<3000){var v=pool[ri(0,pool.length-1)];if(busy[v.p])continue;var st=-ri(6,125);var r=row(v,{stage:5,start:st});var a0=day(st).getTime(),b0=r._end.getTime();if(r._end>=day(0)||!free(v.p,a0,b0))continue;MR.push(r);mark(v.p,a0,b0);hist++;
  /* alguns voltam em até 20 dias para o mesmo serviço (retrabalho) */
  if(rnd()<0.035){var back=Math.round((r._end-T0)/864e5)+ri(3,15),gs=r["GRUPO DE SERVIÇO2"].split("-");if(back<-1){var r2=row(v,{stage:5,start:back,gs:gs,of:r.DESTINO,rt:true}),a2=day(back).getTime();if(r2._end<day(0)&&free(v.p,a2,r2._end.getTime())){MR.push(r2);mark(v.p,a2,r2._end.getTime());hist++}}}}
-MR.sort(function(a,b){return a["DATA SMV"]<b["DATA SMV"]?-1:1});
+MR.sort(function(a,b){return a["DATA PROTOCOLO"]<b["DATA PROTOCOLO"]?-1:1});
 MR.forEach(function(r){delete r._end});
 
 /* reservas cobrindo alguns titulares parados */
 var RES={},act=MR.filter(function(r){return!r["DATA CONCLUSÃO"]&&!r["CANCELAR?"]&&r["DT ENTRADA OFICINA"]});
-shuffle(act.slice()).slice(0,4).forEach(function(r,i){RES[r.PLACA]={s:"p",f:"comite",d:iso(T0),r:RS[i].p,i:r["DATA SMV"],c:RS[i].c}});
+shuffle(act.slice()).slice(0,4).forEach(function(r,i){RES[r.PLACA]={s:"p",f:"comite",d:iso(T0),r:RS[i].p,i:r["DATA PROTOCOLO"],c:RS[i].c}});
 
 /* ---------- laudos de ensaios (links para uma página de exemplo) ---------- */
 var PES=EF.filter(function(x){return x.k=="PESADOS"}),LAU=[];
@@ -147,11 +147,11 @@ PES.forEach(function(v){["ELÉTRICO","ACÚSTICO","TACÓGRAFO"].forEach(function(
 /* ---------- mapa: bases, oficinas e ensaio em pontos aproximados, nomes inventados ---------- */
 var GEO={v:1,u:Date.now(),by:"demonstração",fn:"enderecos-demo.xlsx",P:[]};
 function gp(id,n,a,la,lo,k,c,s,v){GEO.P.push({id:id,n:n,a:a,la:la,lo:lo,k:k,c:c||"",s:s||"",v:v||""})}
-[["BASE CENTRAL",-22.9128,-43.2318],["BASE PORTO",-22.8988,-43.2215],["BASE JARDIM",-22.8405,-43.2752],["BASE ESTAÇÃO",-22.9012,-43.2801],["BASE LAGOA",-22.8796,-43.4302],["BASE MORRO ALTO",-22.8752,-43.4651],["BASE RIO NOVO",-22.7641,-43.3994],["BASE VILA NOVA",-22.8073,-43.4138],["BASE SERRA",-22.4695,-44.4468],["BASE VALE VERDE",-22.5446,-44.1712]].forEach(function(b,i){gp("BASE "+(i+1),b[0],"Endereço fictício",b[1],b[2],"ba",i==0||i==4?"ALFA CONECTA":"ALFA")});
-[["AUTO CENTER NOVA ERA",-22.8661,-43.2552,"MECÂNICA, ELÉTRICA","LEVES"],["MECÂNICA RODA VIVA",-22.8402,-43.3727,"MECÂNICA, PREVENTIVA","LEVES"],["OFICINA SÃO JORGE",-22.7833,-43.4301,"MECÂNICA, BORRACHARIA","LEVES"],["FUNILARIA BOA VISTA",-22.8806,-43.2961,"FUNILARIA, PINTURA","LEVES"],["ELÉTRICA FAÍSCA",-22.9151,-43.2452,"ELÉTRICA","LEVES E PESADOS"],["DIESEL FORTE",-22.8072,-43.3602,"MECÂNICA PESADA","PESADOS"],["HIDRÁULICA PRIME",-22.8551,-43.3205,"HIDRÁULICA, CESTO","PESADOS"],["TRUCK SERVICE CENTRAL",-22.9203,-43.6298,"MECÂNICA PESADA, HIDRÁULICA","PESADOS"]].forEach(function(o,i){gp("OFICINA "+(i+1),o[0],"Endereço fictício",o[1],o[2],"of","",o[3],o[4])});
-[["CENTRO AUTOMOTIVO UNIÃO",-22.8243,-43.3049,"TODOS OS SERVIÇOS","TODOS OS VEÍCULOS"],["SUSPENSÕES ALFA",-22.8612,-43.3511,"SÓ SUSPENSÃO","LEVES - PICAPES LEVES E MÉDIAS - SUPERVISÃO"],["VIDRAÇARIA CRISTAL",-22.8930,-43.2850,"VIDROS","TODOS OS VEÍCULOS"],["OFICINA PONTE VELHA",-22.8150,-43.3900,"DESCREDENCIADA","DESCREDENCIADA"]].forEach(function(o,i){gp("OFICINA "+(9+i),o[0],"Endereço fictício",o[1],o[2],"of","",o[3],o[4])});
-gp("ENSAIO 1","LABTEC","Endereço fictício",-22.8921,-43.2371,"en","","ENSAIO ACÚSTICO, ELÉTRICO E TACÓGRAFO","PESADOS");
-gp("LOCADORA 1","GARAGEM DA LOCADORA","Endereço fictício",-22.8322,-43.3251,"lo");
+[["BASE CENTRAL",-25.5028,-49.1718],["BASE PRAÇA",-25.4888,-49.1615],["BASE JARDIM",-25.4305,-49.2152],["BASE ESTAÇÃO",-25.4912,-49.2201],["BASE LAGOA",-25.4696,-49.3702],["BASE MORRO ALTO",-25.4652,-49.4051],["BASE PINHAIS",-25.3541,-49.3394],["BASE VILA NOVA",-25.3973,-49.3538],["BASE BOM RETIRO",-26.2625,-48.8867],["BASE PIRABEIRABA",-26.3301,-48.8178]].forEach(function(b,i){gp(i<8?"BASE "+(i+1):"BASE SC "+(i-7),b[0],"Endereço fictício",b[1],b[2],"ba",i==0||i==4?"PRISMA":"HORIZONTE")});
+[["AUTO CENTER NOVA ERA",-25.4561,-49.1952,"MECÂNICA, ELÉTRICA","LEVES"],["MECÂNICA RODA VIVA",-25.4302,-49.3127,"MECÂNICA, PREVENTIVA","LEVES"],["OFICINA SÃO JORGE",-25.3733,-49.3701,"MECÂNICA, BORRACHARIA","LEVES"],["FUNILARIA BOA VISTA",-25.4706,-49.2361,"FUNILARIA, PINTURA","LEVES"],["ELÉTRICA FAÍSCA",-25.5051,-49.1852,"ELÉTRICA","LEVES E PESADOS"],["DIESEL FORTE",-25.3972,-49.3002,"MECÂNICA PESADA","PESADOS"],["HIDRÁULICA PRIME",-25.4451,-49.2605,"HIDRÁULICA, CESTO","PESADOS"],["TRUCK SERVICE CENTRAL",-25.5103,-49.5698,"MECÂNICA PESADA, HIDRÁULICA","PESADOS"]].forEach(function(o,i){gp("OFICINA "+(i+1),o[0],"Endereço fictício",o[1],o[2],"of","",o[3],o[4])});
+[["CENTRO AUTOMOTIVO UNIÃO",-25.4143,-49.2449,"TODOS OS SERVIÇOS","TODOS OS VEÍCULOS"],["SUSPENSÕES DELTA",-25.4512,-49.2911,"SÓ SUSPENSÃO","LEVES - PICAPES LEVES E MÉDIAS - SUPERVISÃO"],["VIDRAÇARIA CRISTAL",-25.4830,-49.2250,"VIDROS","TODOS OS VEÍCULOS"],["OFICINA PONTE VELHA",-25.4050,-49.3300,"DESCREDENCIADA","DESCREDENCIADA"]].forEach(function(o,i){gp("OFICINA "+(9+i),o[0],"Endereço fictício",o[1],o[2],"of","",o[3],o[4])});
+gp("ENSAIO 1","LABTEC","Endereço fictício",-25.4821,-49.1771,"en","","ENSAIO ACÚSTICO, ELÉTRICO E TACÓGRAFO","PESADOS");
+gp("LOCADORA 1","GARAGEM DA LOCADORA","Endereço fictício",-25.4222,-49.2651,"lo");
 
 /* ---------- documentos no formato do painel ---------- */
 var S={},now=Date.now();
