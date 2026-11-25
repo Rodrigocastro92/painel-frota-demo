@@ -1448,7 +1448,7 @@ const GO={},GP={},gs=days.map(d=>{let b=0,dc=0;ov.forEach(o=>{if(!(o.b<=d&&(!end
 const glb=gs.reduce((s,x)=>s+x.b,0),gld=gs.reduce((s,x)=>s+x.dc,0),gl=glb-gld;
 const avg=a=>a.length?a.reduce((s,x)=>s+x,0)/a.length:null;
 const ofi={};sai.forEach(o=>{if(ISREB(o.o))return;const k=o.o||"—",q=ofi[k]=ofi[k]||{n:0,t:[],pv:0,ok:0,in:0};q.n++;const x=isoDiff(o.b,o.dc);if(x>=0)q.t.push(x+1);if(o.pv){q.pv++;if(o.dc<=o.pv)q.ok++}});ent.forEach(o=>{if(ISREB(o.o))return;const k=o.o||"—",q=ofi[k]=ofi[k]||{n:0,t:[],pv:0,ok:0,in:0};q.in++});
-const grp={};ent.forEach(o=>String(o.g||"").split("|").filter(Boolean).forEach(g=>grp[g]=(grp[g]||0)+1));
+const grp={},gK=g=>{let k=nrm(g).replace(/\s+/g," ").trim();if(/^[A-Z]+ICA$/.test(k))k=k.slice(0,-1)+"O";return k};ent.forEach(o=>[...new Set(String(o.g||"").split("|").map(gK).filter(Boolean))].forEach(g=>grp[g]=(grp[g]||0)+1)); /* ELÉTRICA, ELETRICO e ELÉTRICO contam como um grupo só */
 const pc={};ent.forEach(o=>pc[o.p]=(pc[o.p]||0)+1);
 return{A,B,days,series,ent,sai,es:EH?{eT:EH.eT,n:EH.n}:null,tm:avg(tm),prev:comPv.length?ok.length/comPv.length:null,bm:avg(series.map(s=>s.n)),pico:series.length?Math.max(...series.map(s=>s.n)):null,disp:avg(series.map(s=>s.disp).filter(x=>x!=null)),dop:avg(series.map(s=>s.dop).filter(x=>x!=null)),
 rein:ent.length?rein.length/ent.length:null,reinL:rein,pvs:PVSTAT(E,A,B),gl,glb,gld,gs,glo:Object.entries(GO).sort((a,b)=>b[1]-a[1]),glp:Object.values(GP).sort((a,b)=>b.v-a.v||b.dc-a.dc),ofi,grp:Object.entries(grp).sort((a,b)=>b[1]-a[1]),pc:Object.entries(pc).filter(x=>x[1]>1).sort((a,b)=>b[1]-a[1])}}
