@@ -14,16 +14,16 @@ Projeto pessoal de portfólio, pensado a partir da rotina de um controlador de f
 
 ## Funcionalidades
 
-- **Resumo (painel executivo)**: disponibilidade da frota com e sem reservas, veículos em manutenção, tempo médio até a entrega (oficina externa x oficina móvel), devoluções atrasadas, penalidade contratual acumulada e prevista para o fechamento do mês, e a lista do que pede atenção hoje.
-- **Manutenção**: a planilha de controle dentro do sistema. Visão em linha do processo ou em tabela, ficha de cada veículo com o diário de observações, filtros e avisos prontos (previsão vencida, entra em penalidade amanhã, sem atualização há 3 dias, orçamento parado), colar linhas direto do Excel e exportar no mesmo formato da planilha.
+- **Resumo (painel executivo)**: disponibilidade da frota com e sem reservas, veículos em manutenção, tempo médio até a entrega (oficina externa x oficina móvel), devoluções atrasadas, receita não faturada acumulada e prevista para o fechamento do mês, e a lista do que pede atenção hoje.
+- **Manutenção**: a planilha de controle dentro do sistema. Visão em linha do processo ou em tabela, ficha de cada veículo com o diário de observações, filtros e avisos prontos (previsão vencida, para de faturar amanhã, sem atualização há 3 dias, orçamento parado), colar linhas direto do Excel e exportar no mesmo formato da planilha.
 - **Alertas e aprovações** e **Boletim do dia**, com o texto pronto para enviar no WhatsApp.
 - **Etapas e translados**: quantos dias cada veículo ficou em cada etapa e quantas vezes passou por ela, lido automaticamente das observações (ex.: voltou do ensaio para a oficina). Jornada dos veículos em manutenção numa linha do tempo, busca de placa com todo o histórico de translados (inclusive de quem já saiu), rotas mais usadas e translados por semana.
 - **Sugestão de oficina**: mapa com bases e oficinas; compara o tempo de translado, a fila atual e o tempo que cada oficina costuma levar para liberar.
 - **Ensaios**: laudos por placa (elétrico, acústico e tacógrafo) e ensaios vencidos que podem ser feitos durante a parada.
-- **Custo da parada**: penalidade contratual (diária de locação perdida) em tempo real com dias de carência configuráveis, desconto dos dias cobertos por reserva e previsão para o fechamento do mês.
+- **Custo da parada**: receita não faturada (diária de locação perdida) em tempo real com dias de carência configuráveis, desconto dos dias cobertos por reserva e previsão para o fechamento do mês.
 - **Previsão de atraso**: estimativa de saída de cada veículo pela curva de liberação de cada oficina (Kaplan-Meier) e pelo desvio das previsões anteriores.
 - **Ranking de oficinas**: nota de 0 a 100 que junta prazo, tempo real ÷ tempo esperado e retornos, ajustada pela complexidade de cada serviço.
-- **Histórico e comparativos**: qualquer período contra outro (entradas, entregas, tempo até a entrega, previsão cumprida, disponibilidade, reincidência e penalidade), com exportação em imagem e Excel.
+- **Histórico e comparativos**: qualquer período contra outro (entradas, entregas, tempo até a entrega, previsão cumprida, disponibilidade, reincidência e receita não faturada), com exportação em imagem e Excel.
 - **Frota e controladores**: consulta da base de frota (modelo, descrição, ano, chassi e implemento), titulares e reservas por controlador.
 - **Nova entrada e chamado no WhatsApp**: colar a linha da planilha de translado preenche a ficha; o texto do chamado sai pronto para o WhatsApp.
 
@@ -56,7 +56,7 @@ Projeto pessoal de portfólio, pensado a partir da rotina de um controlador de f
 
 ## Sobre os dados desta demonstração
 
-Os dados são gerados no navegador pelo arquivo `seed.js`, com datas relativas ao dia de hoje, para a demonstração sempre parecer atual. Contratos ("Horizonte" e "Prisma"), cidades, bases, oficinas, placas, números de ordem e de protocolo, pessoas, valores de locação e laudos são inventados. As regras de cálculo (carência da penalidade, reservas, retrabalho e disponibilidade) seguem o modelo comum de contratos de locação de frota.
+Os dados são gerados no navegador pelo arquivo `seed.js`, com datas relativas ao dia de hoje, para a demonstração sempre parecer atual. Contratos ("Horizonte" e "Prisma"), cidades, bases, oficinas, placas, números de ordem e de protocolo, pessoas, valores de locação e laudos são inventados. As regras de cálculo (carência, reservas, retrabalho e disponibilidade) seguem o modelo comum de contratos de locação de frota.
 
 ## Estrutura
 
