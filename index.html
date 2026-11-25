@@ -4428,7 +4428,7 @@ html.dk .hero{filter:invert(1) hue-rotate(180deg)}
 <script>
 /* foto do cabeçalho (Unsplash) e encaixe da frase no espaço livre do cabeçalho */
 (function(){
- const FOTOS=["photo-1565793298595-6a879b1d9492","photo-1720811559371-7b0ebd219127","photo-1741495515999-0567609a236e"];
+ const FOTOS=["photo-1565793298595-6a879b1d9492","photo-1720811559371-7b0ebd219127","photo-1741495515999-0567609a236e","photo-1531683760080-7bb28a630bd7","photo-1587813369290-091c9d432daf"];
  let n=0;try{const u=new URLSearchParams(location.search).get("foto");if(u&&FOTOS[u-1]){n=u-1;localStorage.setItem("pm_foto",String(u))}else{const v=+localStorage.getItem("pm_foto");if(FOTOS[v-1])n=v-1}}catch(e){}
  document.documentElement.style.setProperty("--hfoto",'url("https://images.unsplash.com/'+FOTOS[n]+'?auto=format&fit=crop&w=2400&q=75")');
  let q=0;
