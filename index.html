@@ -4408,4 +4408,40 @@ function vzMenus(){if(!vzMotion())return;const mn=typeof ESMN!="undefined"?ESMN:
  const sh=document.querySelector("#est .eqsh");if(sh&&!VZR.sh){sh.classList.add("vzo");const ov=document.querySelector("#est .eqov");if(ov)ov.classList.add("vzo")}VZR.sh=!!sh}
 (function(){const R0=RENDERES;RENDERES=function(){const r=R0.apply(this,arguments);try{vzMenus()}catch(e){}return r}})();
 draw();initRole();
-</script><div id="demobar" style="position:fixed;right:10px;bottom:10px;z-index:60;display:flex;gap:8px;align-items:center;background:#103524;color:#fff;border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:6px 10px;font:12px/1.3 Segoe UI,system-ui,sans-serif;box-shadow:0 4px 14px rgba(0,0,0,.25)"><span>🔎 <b>Demonstração</b> · dados fictícios</span><button type="button" onclick="PMDEMO_RESET()" title="Apaga as alterações feitas aqui e recarrega os dados de exemplo" style="border:0;border-radius:7px;padding:4px 8px;background:#2F7D5B;color:#fff;font:inherit;cursor:pointer">↺ Restaurar dados</button></div></body></html>
+</script><div id="demobar" style="position:fixed;right:10px;bottom:10px;z-index:60;display:flex;gap:8px;align-items:center;background:#103524;color:#fff;border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:6px 10px;font:12px/1.3 Segoe UI,system-ui,sans-serif;box-shadow:0 4px 14px rgba(0,0,0,.25)"><span>🔎 <b>Demonstração</b> · dados fictícios</span><button type="button" onclick="PMDEMO_RESET()" title="Apaga as alterações feitas aqui e recarrega os dados de exemplo" style="border:0;border-radius:7px;padding:4px 8px;background:#2F7D5B;color:#fff;font:inherit;cursor:pointer">↺ Restaurar dados</button></div><style id="hbn-css">
+/* ===== Cabeçalho com foto de frota (Unsplash, licença livre) e frase de efeito =====
+   Fundo: degradê verde da paleta por cima da foto; a frase é texto de verdade e o JS a encaixa no espaço livre
+   entre o título e os controles (se não couber, ela some). Sem a foto (offline), fica só o degradê. */
+.hero{isolation:isolate;overflow:hidden;border-bottom:3px solid #CBBFA6!important;background:linear-gradient(90deg,rgba(7,36,27,.95) 0%,rgba(11,61,46,.86) 34%,rgba(11,61,46,.50) 62%,rgba(11,61,46,.30) 100%),var(--hfoto,none) center 55%/cover no-repeat,linear-gradient(120deg,#0B3D2E,#145A3A)!important}
+.hero>*:not(.hbrand){position:relative;z-index:1}
+.hbrand{position:absolute;z-index:0;left:var(--bnx,0px);top:var(--bny,0px);display:none;flex-direction:column;align-items:flex-end;gap:5px;pointer-events:none;user-select:none}
+.hbrand.on{display:flex}
+.hslg{display:flex;flex-direction:column;align-items:flex-end;font-family:"Bahnschrift","DIN Condensed","DIN Alternate","Roboto Condensed","Arial Narrow",sans-serif;font-stretch:condensed;font-weight:700;line-height:1.02;letter-spacing:.02em;text-transform:uppercase;font-size:var(--bnf,20px);white-space:nowrap;text-shadow:0 2px 10px rgba(0,0,0,.45)}
+.hslg b{color:#fff;font-weight:700}.hslg span{color:#CBBFA6;font-weight:700}
+.hbrand small{font-size:var(--bnu,11px);color:rgba(255,255,255,.78);letter-spacing:.14em;text-transform:uppercase;font-weight:600;white-space:nowrap;padding-top:4px;border-top:1px solid rgba(203,191,166,.55)}
+.hbrand.nou small{display:none}
+.hero .ov{color:#CBBFA6!important}.hero h1,.hero #pgt{color:#fff!important}.hero .sub{color:rgba(255,255,255,.86)!important}
+@media (min-width:1101px){.hero .sub{max-width:440px}}
+@media (max-width:760px){.hbrand{top:auto!important;left:auto!important;bottom:16px;right:16px}.hslg{font-size:14px!important}.hbrand small{display:none}}
+html.dk .hero{filter:invert(1) hue-rotate(180deg)}
+</style>
+<script>
+/* foto do cabeçalho (Unsplash) e encaixe da frase no espaço livre do cabeçalho */
+(function(){
+ const FOTOS=["photo-1565793298595-6a879b1d9492","photo-1720811559371-7b0ebd219127","photo-1741495515999-0567609a236e"];
+ let n=0;try{const u=new URLSearchParams(location.search).get("foto");if(u&&FOTOS[u-1]){n=u-1;localStorage.setItem("pm_foto",String(u))}else{const v=+localStorage.getItem("pm_foto");if(FOTOS[v-1])n=v-1}}catch(e){}
+ document.documentElement.style.setProperty("--hfoto",'url("https://images.unsplash.com/'+FOTOS[n]+'?auto=format&fit=crop&w=2400&q=75")');
+ let q=0;
+ function el(H){let b=H.querySelector('.hbrand');if(!b){b=document.createElement('div');b.className='hbrand';b.setAttribute('aria-hidden','true');b.innerHTML='<div class="hslg"><b>Frota rodando,</b><span>receita faturando.</span></div><small>Gestão de frota com dados</small>';H.appendChild(b)}return b}
+ function fit(){q=0;const H=document.querySelector('.hero');if(!H)return;const b=el(H);if(innerWidth<=760){b.className='hbrand on nou';return}
+  const hr=H.getBoundingClientRect(),hl=H.querySelector('.hl'),set=(k,v)=>H.style.setProperty(k,v);
+  const obs=[...(hl?hl.children:[]),...[...H.children].filter(c=>c!==hl&&c!==b)].filter(c=>c.offsetParent).map(c=>c.getBoundingClientRect()).filter(r=>r.width&&r.height).map(r=>({l:r.left-hr.left-18,t:r.top-hr.top-8,r:r.right-hr.left+18,b:r.bottom-hr.top+8}));
+  const W=hr.width,Hh=hr.height,pad=16,xs=[W-24,...obs.map(o=>o.l)].filter(x=>x>60),hit=(x,y,w,h)=>x<pad||y<4||x+w>W-pad||y+h>Hh-4||obs.some(o=>x<o.r&&x+w>o.l&&y<o.b&&y+h>o.t);
+  for(let f=26;f>=14;f-=2){const url=f>=17;set('--bnf',f+'px');set('--bnu',Math.max(9,Math.round(f*0.42))+'px');
+   b.className='hbrand on'+(url?'':' nou');const bw=b.offsetWidth,bh=b.offsetHeight;
+   for(const xr of xs.sort((a,c)=>c-a)){const x=xr-bw;for(const y of [(Hh-bh)/2,Hh-bh-10,10]){if(!hit(x,y,bw,bh)){set('--bnx',Math.round(x)+'px');set('--bny',Math.round(y)+'px');return}}}}
+  b.className='hbrand'}
+ const go=()=>{if(!q)q=requestAnimationFrame(fit)};addEventListener('resize',go);
+ const st=()=>{const H=document.querySelector('.hero');if(!H)return setTimeout(st,300);new ResizeObserver(go).observe(H);new MutationObserver(m=>{if(m.some(x=>!(x.target.closest&&x.target.closest('.hbrand'))&&!(x.type=='attributes'&&x.target===H)))go()}).observe(H,{childList:true,subtree:true,characterData:true,attributes:true,attributeFilter:['class','hidden']});go()};st()})();
+</script>
+</body></html>
