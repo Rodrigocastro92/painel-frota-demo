@@ -4,12 +4,14 @@
    para a demonstração sempre parecer atual. Nada aqui vem da operação real. */
 (function(){
 "use strict";
-var VER="demo-6",KEEP={pm_theme:1};
+var VER="demo-7",KEEP={pm_theme:1};
 var LSO=null;try{LSO=window.localStorage}catch(e){}
 function wipe(){if(!LSO)return;Object.keys(LSO).forEach(function(k){if(k.indexOf("pmdb:")===0||(k.indexOf("pm_")===0&&!KEEP[k]))LSO.removeItem(k)})}
 window.PMDEMO_RESET=function(){try{wipe()}catch(e){}location.reload()};
 /* recomeça do zero quando a versão muda ou depois de 3 dias, para as datas continuarem atuais */
 try{var at=+LSO.getItem("pmdb:demoAt")||0;if(LSO.getItem("pmdb:demo")!==VER||Date.now()-at>3*864e5){wipe();LSO.setItem("pmdb:demo",VER);LSO.setItem("pmdb:demoAt",String(Date.now()))}}catch(e){}
+/* na demonstração o menu lateral começa fixo (aberto); quem desafixar continua com a própria escolha */
+try{if(LSO&&LSO.getItem("pm_sb")===null)LSO.setItem("pm_sb",JSON.stringify({c:false,p:true}))}catch(e){}
 if(LSO&&LSO.getItem("pmdb:init")){window.__SEED={};return}
 
 /* ---------- utilidades ---------- */
