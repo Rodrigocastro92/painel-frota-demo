@@ -4472,4 +4472,48 @@ html.dk .hero{filter:invert(1) hue-rotate(180deg)}
  const go=()=>{if(!q)q=requestAnimationFrame(fit)};addEventListener('resize',go);
  const st=()=>{const H=document.querySelector('.hero');if(!H)return setTimeout(st,300);new ResizeObserver(go).observe(H);new MutationObserver(m=>{if(m.some(x=>!(x.target.closest&&x.target.closest('.hbrand,.hfrota'))&&!(x.type=='attributes'&&x.target===H)))go()}).observe(H,{childList:true,subtree:true,characterData:true,attributes:true,attributeFilter:['class','hidden']});go()};st()})();
 </script>
+<style id="drop-css">
+#dropov{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;background:rgba(16,32,58,.55);backdrop-filter:blur(2px);pointer-events:none}
+#dropov.on{display:flex}
+#dropov>div{display:flex;flex-direction:column;align-items:center;gap:8px;max-width:520px;padding:34px 40px;border:3px dashed rgba(255,255,255,.85);border-radius:20px;background:rgba(255,255,255,.12);color:#fff;text-align:center}
+#dropov b{font-size:26px}#dropov span{font-size:14px;line-height:1.45;opacity:.92}#dropov i{font-style:normal;font-size:44px}
+#dropch{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;background:rgba(16,32,58,.45)}
+#dropch>div{background:var(--card,#fff);color:inherit;border-radius:16px;padding:20px 22px;max-width:440px;width:92%;box-shadow:0 20px 60px -20px rgba(0,0,0,.5)}
+#dropch h3{margin:0 0 4px;font-size:17px}#dropch p{margin:0 0 12px;font-size:13px;color:var(--mu)}
+#dropch button{display:block;width:100%;text-align:left;margin:6px 0;padding:10px 12px;border-radius:10px;border:1px solid var(--bd,#d5dce5);background:transparent;font:inherit;cursor:pointer}
+#dropch button:hover{border-color:currentColor}#dropch button.cn{text-align:center;border:0;color:var(--mu)}
+</style>
+<script>
+/* ===== arrastar e soltar: solte a planilha em qualquer parte do painel; ele identifica qual é e atualiza ===== */
+(function(){
+ const ov=document.createElement("div");ov.id="dropov";ov.innerHTML='<div><i>📥</i><b>Solte a planilha aqui</b><span>O painel identifica sozinho se é a planilha de manutenção, de translados, de endereços das oficinas, de laudos de ensaios ou o comitê / reservas, e atualiza.</span></div>';document.body.appendChild(ov);
+ const isF=e=>e.dataTransfer&&[...(e.dataTransfer.types||[])].includes("Files"),onIn=e=>e.target&&e.target.closest&&e.target.closest('input[type="file"]');
+ const can=()=>typeof ROLE!="undefined"&&ROLE=="controlador"&&!(window.PMSP&&PMSP.g);
+ let dc=0;const off=()=>{dc=0;ov.classList.remove("on")};
+ addEventListener("dragenter",e=>{if(!isF(e)||onIn(e)||!can())return;e.preventDefault();dc++;ov.classList.add("on")});
+ addEventListener("dragover",e=>{if(!isF(e)||onIn(e))return;e.preventDefault();e.dataTransfer.dropEffect=can()?"copy":"none"});
+ addEventListener("dragleave",e=>{if(!isF(e))return;dc=Math.max(0,dc-1);if(!dc)ov.classList.remove("on")});
+ addEventListener("drop",e=>{if(!isF(e)||onIn(e))return;e.preventDefault();off();if(!can()){esToast("Só os controladores podem atualizar as planilhas.",1);return}const fs=[...e.dataTransfer.files];if(fs.length)run(fs)});
+ addEventListener("blur",off);
+ const NOME={painel:"planilha de manutenção (painel do dia)",transl:"planilha de translados",geo:"planilha de endereços das oficinas",lau:"planilha de laudos de ensaios",res:"comitê de carros parados / reservas"};
+ async function kind(buf){const N=x=>nrm(x).replace(/\s+/g," ").trim(),nm=(XLSX.read(buf,{type:"array",bookSheets:true}).SheetNames||[]).map(N),has=re=>nm.some(n=>re.test(n));
+  if(has(/^MANUTENCAO/))return"painel";if(has(/^TRANSLADO/)&&has(/^ENTREGA/))return"transl";if(has(/PRESTADOR/)&&has(/BASE/))return"geo";
+  const wb=XLSX.read(buf,{type:"array"});try{if(COMITE(wb))return"res"}catch(x){}
+  let H="";wb.SheetNames.forEach(n=>{XLSX.utils.sheet_to_json(wb.Sheets[n],{header:1,defval:""}).slice(0,15).forEach(r=>{H+="|"+r.map(N).join("|")+"|"})});
+  if(/\|PLACA\|/.test(H)&&/\|(LINK|LAUDO|URL)[^|]*\|/.test(H))return"lau";
+  try{if(lwide(wb).length)return"lau"}catch(x){}
+  if(/\|PLACA\|/.test(H)&&/\|(DATA SMV|SMV|DESTINO|OBSERVA[CÇ]OES)\|/.test(H))return"painel";
+  if(/\|PLACA\|/.test(H)&&/RESERVA/.test(H))return"res";
+  return null}
+ function feed(id,f){const i=$(id);if(!i)throw new Error("Não achei o campo de envio.");const dt=new DataTransfer();dt.items.add(f);i.files=dt.files;i.dispatchEvent(new Event("change",{bubbles:true}))}
+ function go(k,f,buf){esToast(f.name+": "+NOME[k]+". Atualizando…");
+  if(k=="transl"){TAB="dados";draw();ESUP(f,buf)}else if(k=="geo"){TAB="sugoficina";draw();GEOUP(f,buf)}
+  else if(k=="painel"){TAB="dados";draw();feed("up",f)}else if(k=="lau"){TAB="ensaios";draw();feed("lf",f)}else if(k=="res"){TAB="custo";draw();feed("resf",f)}}
+ function ask(f,buf){return new Promise(ok=>{const d=document.createElement("div");d.id="dropch";d.innerHTML=`<div role="dialog" aria-modal="true"><h3>Que planilha é essa?</h3><p>Não consegui identificar <b>${h(f.name)}</b> sozinho. Escolha para onde ela vai:</p>${Object.keys(NOME).map(k=>`<button type="button" data-dk="${k}">${h(NOME[k].charAt(0).toUpperCase()+NOME[k].slice(1))}</button>`).join("")}<button type="button" class="cn" data-dk="">Cancelar</button></div>`;
+  d.addEventListener("click",e=>{const b=e.target.closest("[data-dk]");if(!b&&e.target!==d)return;d.remove();const k=b?b.dataset.dk:"";if(k)go(k,f,buf);ok()});document.body.appendChild(d)})}
+ async function run(fs){for(const f of fs){if(!/\.(xlsx|xlsm|xlsb|xls|csv)$/i.test(f.name)){esToast(f.name+": só aceito planilhas (Excel ou CSV).",1);continue}
+  try{if(typeof XLSX=="undefined")throw new Error("A biblioteca de Excel não carregou. Recarregue a página.");const buf=await f.arrayBuffer(),k=await kind(buf);
+   if(k)go(k,f,buf);else await ask(f,buf);if(fs.length>1)await new Promise(r=>setTimeout(r,2500))}catch(x){esToast(f.name+": "+(x.message||"não consegui ler a planilha."),1)}}}
+})();
+</script>
 </body></html>
